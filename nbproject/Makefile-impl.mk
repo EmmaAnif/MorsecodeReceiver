@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=Framework4PIC32_with_u8g2
 
 # Active Configuration
-DEFAULTCONF=FrameWorkWith_u8g2
+DEFAULTCONF=FrameworkWith_u8g2
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Justu8g2POC FrameWorkWith_u8g2 
+ALLCONFS=Justu8g2POC FrameworkWith_u8g2 
 
 
 # build
@@ -46,14 +46,14 @@ ALLCONFS=Justu8g2POC FrameWorkWith_u8g2
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=Justu8g2POC clean
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=FrameWorkWith_u8g2 clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=FrameworkWith_u8g2 clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=Justu8g2POC build
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=FrameWorkWith_u8g2 build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=FrameworkWith_u8g2 build
 
 
 

@@ -26,7 +26,7 @@
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>FrameWorkWith_u8g2</name>
+                    <name>FrameworkWith_u8g2</name>
                     <type>2</type>
                 </confElem>
             </confList>

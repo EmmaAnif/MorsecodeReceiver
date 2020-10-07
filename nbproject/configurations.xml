@@ -621,7 +621,7 @@
                   value="Press to select which tool pack to use"/>
       </snap>
     </conf>
-    <conf name="FrameWorkWith_u8g2" type="2">
+    <conf name="FrameworkWith_u8g2" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MX170F256B</targetDevice>

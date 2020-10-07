@@ -31,7 +31,7 @@ DEFAULTCONF=Justu8g2POC
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=default Justu8g2POC FrameWorkWith_u8g2 
+ALLCONFS=Justu8g2POC FrameWorkWith_u8g2 
 
 
 # build
@@ -45,7 +45,6 @@ ALLCONFS=default Justu8g2POC FrameWorkWith_u8g2
 
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=Justu8g2POC clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=FrameWorkWith_u8g2 clean
 
@@ -53,7 +52,6 @@ ALLCONFS=default Justu8g2POC FrameWorkWith_u8g2
 
 # all
 .all-impl: .all-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=Justu8g2POC build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=FrameWorkWith_u8g2 build
 

@@ -22,10 +22,6 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>default</name>
-                    <type>2</type>
-                </confElem>
-                <confElem>
                     <name>Justu8g2POC</name>
                     <type>2</type>
                 </confElem>

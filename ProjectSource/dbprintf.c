@@ -25,6 +25,8 @@
  History
  When           Who     What/Why
  -------------- ---     --------
+ 10/06/20 22:53 ram     updated to use the terminal module. Updated variable 
+                        names to make MPLAB happy during parsing
  05/15/02 21:40 jec      converted to use SC1 for use in me218c project master
  02/23/98 21:40 jec      made cl & ch explicitly signed in the test program
                          this is because introl defaults to unsigned chars

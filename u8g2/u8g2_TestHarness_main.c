@@ -21,7 +21,7 @@ void main(void) {
     SPI_Init(); // hmm, I wonder who will write this function :-)
     
     // build up the u8g2 structure with the proper values for our display
-    // use the next 4 lines verbatim in your initialization
+    // use the next 5 lines verbatim in your initialization
     u8g2_Setup_ssd1306_128x64_noname_f(&u8g2, U8G2_R0, u8x8_byte_pic32_hw_spi, 
                                        u8x8_pic32_gpio_and_delay);
     // pass all that stuff on to the display to initialize it

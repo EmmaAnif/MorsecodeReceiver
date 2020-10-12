@@ -119,3 +119,14 @@ bool Check4Keystroke(void)
   return false;
 }
 
+bool Check4NextPage(void)
+{
+  if !(u8g2_NextPage(&u8g2))   // new key waiting?
+  {
+    ES_Event_t ThisEvent;
+    ThisEvent.EventType   = ES_NEXT_PAGE;
+    ES_PostAll(ThisEvent);
+    return true;
+  }
+  return false;
+}

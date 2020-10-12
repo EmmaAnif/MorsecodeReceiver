@@ -38,17 +38,12 @@ void SPI_Init(void){
     SPI1CONbits.SIDL = 0; //continue in idle mode
     
     //clear the receive buffer, clear enhanced buffer mode
-    uint32_t clearBuff;
-    while (SPI1STATbits.SPITBE = 0){
-        clearBuff = SPI1BUF; //clear the Buffer Register
-    }
     SPI1CONbits.ENHBUF = 0;
+    uint32_t clearBuff;
+    clearBuff = SPI1BUF; //clear the Buffer Register
     
     //disable SDI bit
     SPI1CONbits.DISSDI = 1; 
-    
-    //do not sign extend FIFO
-    SPI1CON2bits.SPISGNEXT = 0;
 
     //set BRG register using bit rate
     uint32_t bitRate = 1e6; //1MHz
@@ -97,9 +92,10 @@ void SPI_Init(void){
  
 ****************************************************************************/
 void SPI_Tx(uint8_t data){
-    if (SPI1STATbits.SPITBE = 1){
+    if (SPI1STATbits.SPITBE == 1){
+        uint8_t readBUF;
         SPI1BUF = data;
-        while (SPI1STATbits.SPITBF = 1){}
+        while (SPI1STATbits.SPITBF == 1){}
         readBUF = SPI1BUF;
     }
 }

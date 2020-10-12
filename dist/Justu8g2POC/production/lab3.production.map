@@ -7,103 +7,103 @@ Archive member included because of file (symbol)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(memset.o)
                               build/Justu8g2POC/production/u8g2/u8g2_buffer.o (memset)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o (_bootstrap_exception_handler)
+                              C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o (_on_reset)
+                              C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o (_on_reset)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o (_on_bootstrap)
+                              C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o (_on_bootstrap)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o (_nmi_handler)
+                              C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o (_nmi_handler)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o (__pic32_data_init)
+                              C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o (__pic32_data_init)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o (_general_exception_context)
+                              C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o (_general_exception_context)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector0.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_0)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_0)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector1.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_1)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_1)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector2.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_2)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_2)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector3.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_3)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_3)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector5.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_5)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_5)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector6.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_6)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_6)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector7.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_7)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_7)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector8.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_8)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_8)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector9.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_9)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_9)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector10.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_10)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_10)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector11.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_11)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_11)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector12.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_12)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_12)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector13.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_13)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_13)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector14.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_14)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_14)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector15.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_15)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_15)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector16.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_16)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_16)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector17.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_17)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_17)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector18.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_18)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_18)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector19.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_19)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_19)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector20.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_20)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_20)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector21.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_21)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_21)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector22.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_22)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_22)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector23.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_23)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_23)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector24.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_24)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_24)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector25.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_25)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_25)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector26.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_26)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_26)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector27.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_27)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_27)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector28.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_28)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_28)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector29.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_29)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_29)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector30.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_30)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_30)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector31.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_31)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_31)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector32.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_32)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_32)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector33.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_33)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_33)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector34.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_34)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_34)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector35.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_35)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_35)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector36.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_36)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_36)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector37.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_37)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_37)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector38.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_38)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_38)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector39.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_39)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_39)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector40.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_40)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_40)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector41.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_41)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_41)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector42.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_42)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_42)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector43.o)
-                              C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o (__vector_dispatch_43)
+                              C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o (__vector_dispatch_43)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
                               c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o) (_general_exception_handler)
 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
@@ -125,26 +125,26 @@ section                    address  length [bytes]      (dec)  Description
 .rodata                 0x9d00808c          0x6b4        1716  Read-only const 
 .text                   0x9d008740          0xbe4        3044  App's exec code 
 .text                   0x9d009324          0x96c        2412  App's exec code 
-.text                   0x9d009c90          0x59c        1436  App's exec code 
-.text                   0x9d00a22c          0x4d4        1236  App's exec code 
-.text                   0x9d00a700          0x380         896  App's exec code 
-.text                   0x9d00aa80          0x288         648  App's exec code 
-.rodata                 0x9d00ad08          0x128         296  Read-only const 
-.text.general_exception 0x9d00ae30           0xdc         220   
-.dinit                  0x9d00af0c           0xb0         176   
-.text                   0x9d00afbc          0x12c         300  App's exec code 
-.text                   0x9d00b0e8           0xd0         208  App's exec code 
-.text.main_entry        0x9d00b1b8           0x54          84   
-.text._bootstrap_except 0x9d00b20c           0x48          72   
-.text._general_exceptio 0x9d00b254           0x48          72   
-.vector_default         0x9d00b29c           0x48          72   
-.text                   0x9d00b2e4           0x44          68  App's exec code 
-.rodata                 0x9d00b328           0x54          84  Read-only const 
-.text                   0x9d00b37c           0x18          24  App's exec code 
-.rodata                 0x9d00b394            0x8           8  Read-only const 
-.text._on_reset         0x9d00b39c            0x8           8   
-.text._on_bootstrap     0x9d00b3a4            0x8           8   
-      Total kseg0_program_mem used  :      0xb3ac       45996  17.8% of 0x3f000
+.text                   0x9d009c90          0x588        1416  App's exec code 
+.text                   0x9d00a218          0x4d4        1236  App's exec code 
+.text                   0x9d00a6ec          0x380         896  App's exec code 
+.text                   0x9d00aa6c          0x288         648  App's exec code 
+.rodata                 0x9d00acf4          0x128         296  Read-only const 
+.text.general_exception 0x9d00ae1c           0xdc         220   
+.dinit                  0x9d00aef8           0xb0         176   
+.text                   0x9d00afa8          0x12c         300  App's exec code 
+.text                   0x9d00b0d4           0xd0         208  App's exec code 
+.text.main_entry        0x9d00b1a4           0x54          84   
+.text._bootstrap_except 0x9d00b1f8           0x48          72   
+.text._general_exceptio 0x9d00b240           0x48          72   
+.vector_default         0x9d00b288           0x48          72   
+.text                   0x9d00b2d0           0x44          68  App's exec code 
+.rodata                 0x9d00b314           0x54          84  Read-only const 
+.text                   0x9d00b368           0x18          24  App's exec code 
+.rodata                 0x9d00b380            0x8           8  Read-only const 
+.text._on_reset         0x9d00b388            0x8           8   
+.text._on_bootstrap     0x9d00b390            0x8           8   
+      Total kseg0_program_mem used  :      0xb398       45976  17.8% of 0x3f000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -208,7 +208,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x188         392  33.6% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0xb6a4       46756  17.8% of 0x40490
+         Total Program Memory used  :      0xb690       46736  17.7% of 0x40490
         --------------------------------------------------------------------------
 
 
@@ -218,19 +218,19 @@ section                    address  length [bytes]      (dec)  Description
 .sdata                  0xa0000000            0x4           4  Small init data 
 .sbss                   0xa0000004           0x24          36  Small uninit data 
 .bss                    0xa0000028          0x508        1288  Uninitialized data 
-.data                   0xa0000530           0x10          16  Initialized data 
-.bss                    0xa0000540           0x10          16  Uninitialized data 
-         Total kseg1_data_mem used  :       0x550        1360  2.1% of 0x10000
+.bss                    0xa0000530           0x10          16  Uninitialized data 
+.data                   0xa0000540            0xc          12  Initialized data 
+         Total kseg1_data_mem used  :       0x54c        1356  2.1% of 0x10000
         --------------------------------------------------------------------------
-            Total Data Memory used  :       0x550        1360  2.1% of 0x10000
+            Total Data Memory used  :       0x54c        1356  2.1% of 0x10000
         --------------------------------------------------------------------------
 
 
 Dynamic Data-Memory Reservation
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-heap                    0xa0000558           0x10          16  Reserved for heap 
-stack                   0xa0000580         0xfa78       64120  Reserved for stack 
+heap                    0xa0000550           0x10          16  Reserved for heap 
+stack                   0xa0000578         0xfa78       64120  Reserved for stack 
 
         --------------------------------------------------------------------------
 
@@ -386,19 +386,19 @@ Discarded input sections
  .bss           0x00000000        0x0 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
  .reginfo       0x00000000       0x18 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
  .rodata        0x00000000        0x4 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
- .text          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
- .data          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
- .bss           0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
- .reginfo       0x00000000       0x18 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
- .text          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccBSXQvZ.o
- .data          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccBSXQvZ.o
- .bss           0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccBSXQvZ.o
- .reginfo       0x00000000       0x18 C:\Users\anifs\AppData\Local\Temp\ccBSXQvZ.o
- .text          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o
- .data          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o
- .bss           0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o
- .reginfo       0x00000000       0x18 C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o
- .discard       0x00000000       0xb0 C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o
+ .text          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
+ .data          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
+ .bss           0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
+ .reginfo       0x00000000       0x18 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
+ .text          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\cccGyUBH.o
+ .data          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\cccGyUBH.o
+ .bss           0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\cccGyUBH.o
+ .reginfo       0x00000000       0x18 C:\Users\anifs\AppData\Local\Temp\cccGyUBH.o
+ .text          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o
+ .data          0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o
+ .bss           0x00000000        0x0 C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o
+ .reginfo       0x00000000       0x18 C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o
+ .discard       0x00000000       0xb0 C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o
  .data          0x00000000        0x0 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
  .bss           0x00000000        0x0 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
@@ -674,9 +674,9 @@ LOAD build/Justu8g2POC/production/u8g2/u8x8_string.o
 LOAD build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
 LOAD build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
                 0x00000001                __MPLAB_BUILD = 0x1
-LOAD C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
-LOAD C:\Users\anifs\AppData\Local\Temp\ccBSXQvZ.o
-LOAD C:\Users\anifs\AppData\Local\Temp\ccg6mHdd.o
+LOAD C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
+LOAD C:\Users\anifs\AppData\Local\Temp\cccGyUBH.o
+LOAD C:\Users\anifs\AppData\Local\Temp\ccxah0Fa.o
 LOAD c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
                 0x00000400                PROVIDE (_min_stack_size, 0x400)
 START GROUP
@@ -725,16 +725,16 @@ END GROUP
 
 .reset          0xbfc00000      0x178
  *(.reset)
- .reset         0xbfc00000        0x8 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
+ .reset         0xbfc00000        0x8 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
                 0xbfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0xbfc00008      0x170 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
+                0xbfc00008      0x170 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
                 0xbfc00008                _startup
 
 .bev_excpt      0xbfc00380       0x10
  *(.bev_handler)
- .bev_handler   0xbfc00380       0x10 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
+ .bev_handler   0xbfc00380       0x10 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
 
 .dbg_excpt      0xbfc00480        0x0
                 0xbfc00480                . = (. + DEFINED (_DEBUGGER)?0x8:0x0)
@@ -744,7 +744,7 @@ END GROUP
 
 .app_excpt      0x9d03f180       0x10
  *(.gen_handler)
- .gen_handler   0x9d03f180       0x10 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
+ .gen_handler   0x9d03f180       0x10 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
 
 .vector_0       0x9d03f200        0x8
  *(.vector_0)
@@ -1519,103 +1519,103 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x20514
+.debug_info     0x00000000    0x2050f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xec6 build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
  .debug_info    0x00000ec6      0xb80 build/Justu8g2POC/production/u8g2/common.o
- .debug_info    0x00001a46      0xa3f build/Justu8g2POC/production/u8g2/spi_master.o
- .debug_info    0x00002485     0x115b build/Justu8g2POC/production/u8g2/u8g2_bitmap.o
- .debug_info    0x000035e0     0x1057 build/Justu8g2POC/production/u8g2/u8g2_box.o
- .debug_info    0x00004637     0x1100 build/Justu8g2POC/production/u8g2/u8g2_buffer.o
- .debug_info    0x00005737     0x1552 build/Justu8g2POC/production/u8g2/u8g2_circle.o
- .debug_info    0x00006c89      0xe27 build/Justu8g2POC/production/u8g2/u8g2_cleardisplay.o
- .debug_info    0x00007ab0      0x1d5 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
- .debug_info    0x00007c85      0xee8 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
- .debug_info    0x00008b6d     0x21e6 build/Justu8g2POC/production/u8g2/u8g2_font.o
- .debug_info    0x0000ad53      0x152 build/Justu8g2POC/production/u8g2/u8g2_fonts.o
- .debug_info    0x0000aea5     0x1080 build/Justu8g2POC/production/u8g2/u8g2_hvline.o
- .debug_info    0x0000bf25      0xf42 build/Justu8g2POC/production/u8g2/u8g2_input_value.o
- .debug_info    0x0000ce67      0xed1 build/Justu8g2POC/production/u8g2/u8g2_intersection.o
- .debug_info    0x0000dd38      0xfe9 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
- .debug_info    0x0000ed21      0xed0 build/Justu8g2POC/production/u8g2/u8g2_line.o
- .debug_info    0x0000fbf1      0xf8e build/Justu8g2POC/production/u8g2/u8g2_ll_hvline.o
- .debug_info    0x00010b7f      0xfd8 build/Justu8g2POC/production/u8g2/u8g2_message.o
- .debug_info    0x00011b57      0x8c4 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
- .debug_info    0x0001241b     0x1525 build/Justu8g2POC/production/u8g2/u8g2_polygon.o
- .debug_info    0x00013940     0x1216 build/Justu8g2POC/production/u8g2/u8g2_selection_list.o
- .debug_info    0x00014b56     0x1569 build/Justu8g2POC/production/u8g2/u8g2_setup.o
- .debug_info    0x000160bf      0x78c build/Justu8g2POC/production/u8g2/u8log.o
- .debug_info    0x0001684b     0x1067 build/Justu8g2POC/production/u8g2/u8log_u8g2.o
- .debug_info    0x000178b2      0x8fc build/Justu8g2POC/production/u8g2/u8log_u8x8.o
- .debug_info    0x000181ae      0xfe8 build/Justu8g2POC/production/u8g2/u8x8_8x8.o
- .debug_info    0x00019196      0xea1 build/Justu8g2POC/production/u8g2/u8x8_byte.o
- .debug_info    0x0001a037      0xed6 build/Justu8g2POC/production/u8g2/u8x8_cad.o
- .debug_info    0x0001af0d      0xc64 build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
- .debug_info    0x0001bb71      0x72a build/Justu8g2POC/production/u8g2/u8x8_debounce.o
- .debug_info    0x0001c29b      0xa5b build/Justu8g2POC/production/u8g2/u8x8_display.o
- .debug_info    0x0001ccf6       0xfe build/Justu8g2POC/production/u8g2/u8x8_fonts.o
- .debug_info    0x0001cdf4      0x663 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
- .debug_info    0x0001d457      0x752 build/Justu8g2POC/production/u8g2/u8x8_input_value.o
- .debug_info    0x0001dba9      0x7b9 build/Justu8g2POC/production/u8g2/u8x8_message.o
- .debug_info    0x0001e362      0x900 build/Justu8g2POC/production/u8g2/u8x8_selection_list.o
- .debug_info    0x0001ec62      0x79e build/Justu8g2POC/production/u8g2/u8x8_setup.o
- .debug_info    0x0001f400      0x863 build/Justu8g2POC/production/u8g2/u8x8_string.o
- .debug_info    0x0001fc63      0x214 build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
- .debug_info    0x0001fe77      0x230 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
- .debug_info    0x000200a7       0xf4 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x0002019b       0xcd c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_info    0x00020268       0xd5 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_info    0x0002033d       0xf0 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
- .debug_info    0x0002042d       0xe7 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_info    0x00001a46      0xa3a build/Justu8g2POC/production/u8g2/spi_master.o
+ .debug_info    0x00002480     0x115b build/Justu8g2POC/production/u8g2/u8g2_bitmap.o
+ .debug_info    0x000035db     0x1057 build/Justu8g2POC/production/u8g2/u8g2_box.o
+ .debug_info    0x00004632     0x1100 build/Justu8g2POC/production/u8g2/u8g2_buffer.o
+ .debug_info    0x00005732     0x1552 build/Justu8g2POC/production/u8g2/u8g2_circle.o
+ .debug_info    0x00006c84      0xe27 build/Justu8g2POC/production/u8g2/u8g2_cleardisplay.o
+ .debug_info    0x00007aab      0x1d5 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
+ .debug_info    0x00007c80      0xee8 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
+ .debug_info    0x00008b68     0x21e6 build/Justu8g2POC/production/u8g2/u8g2_font.o
+ .debug_info    0x0000ad4e      0x152 build/Justu8g2POC/production/u8g2/u8g2_fonts.o
+ .debug_info    0x0000aea0     0x1080 build/Justu8g2POC/production/u8g2/u8g2_hvline.o
+ .debug_info    0x0000bf20      0xf42 build/Justu8g2POC/production/u8g2/u8g2_input_value.o
+ .debug_info    0x0000ce62      0xed1 build/Justu8g2POC/production/u8g2/u8g2_intersection.o
+ .debug_info    0x0000dd33      0xfe9 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
+ .debug_info    0x0000ed1c      0xed0 build/Justu8g2POC/production/u8g2/u8g2_line.o
+ .debug_info    0x0000fbec      0xf8e build/Justu8g2POC/production/u8g2/u8g2_ll_hvline.o
+ .debug_info    0x00010b7a      0xfd8 build/Justu8g2POC/production/u8g2/u8g2_message.o
+ .debug_info    0x00011b52      0x8c4 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
+ .debug_info    0x00012416     0x1525 build/Justu8g2POC/production/u8g2/u8g2_polygon.o
+ .debug_info    0x0001393b     0x1216 build/Justu8g2POC/production/u8g2/u8g2_selection_list.o
+ .debug_info    0x00014b51     0x1569 build/Justu8g2POC/production/u8g2/u8g2_setup.o
+ .debug_info    0x000160ba      0x78c build/Justu8g2POC/production/u8g2/u8log.o
+ .debug_info    0x00016846     0x1067 build/Justu8g2POC/production/u8g2/u8log_u8g2.o
+ .debug_info    0x000178ad      0x8fc build/Justu8g2POC/production/u8g2/u8log_u8x8.o
+ .debug_info    0x000181a9      0xfe8 build/Justu8g2POC/production/u8g2/u8x8_8x8.o
+ .debug_info    0x00019191      0xea1 build/Justu8g2POC/production/u8g2/u8x8_byte.o
+ .debug_info    0x0001a032      0xed6 build/Justu8g2POC/production/u8g2/u8x8_cad.o
+ .debug_info    0x0001af08      0xc64 build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
+ .debug_info    0x0001bb6c      0x72a build/Justu8g2POC/production/u8g2/u8x8_debounce.o
+ .debug_info    0x0001c296      0xa5b build/Justu8g2POC/production/u8g2/u8x8_display.o
+ .debug_info    0x0001ccf1       0xfe build/Justu8g2POC/production/u8g2/u8x8_fonts.o
+ .debug_info    0x0001cdef      0x663 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
+ .debug_info    0x0001d452      0x752 build/Justu8g2POC/production/u8g2/u8x8_input_value.o
+ .debug_info    0x0001dba4      0x7b9 build/Justu8g2POC/production/u8g2/u8x8_message.o
+ .debug_info    0x0001e35d      0x900 build/Justu8g2POC/production/u8g2/u8x8_selection_list.o
+ .debug_info    0x0001ec5d      0x79e build/Justu8g2POC/production/u8g2/u8x8_setup.o
+ .debug_info    0x0001f3fb      0x863 build/Justu8g2POC/production/u8g2/u8x8_string.o
+ .debug_info    0x0001fc5e      0x214 build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
+ .debug_info    0x0001fe72      0x230 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
+ .debug_info    0x000200a2       0xf4 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x00020196       0xcd c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_info    0x00020263       0xd5 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x00020338       0xf0 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
+ .debug_info    0x00020428       0xe7 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_abbrev   0x00000000     0x3105
+.debug_abbrev   0x00000000     0x3101
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x125 build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
  .debug_abbrev  0x00000125      0x159 build/Justu8g2POC/production/u8g2/common.o
- .debug_abbrev  0x0000027e      0x103 build/Justu8g2POC/production/u8g2/spi_master.o
- .debug_abbrev  0x00000381      0x14d build/Justu8g2POC/production/u8g2/u8g2_bitmap.o
- .debug_abbrev  0x000004ce      0x129 build/Justu8g2POC/production/u8g2/u8g2_box.o
- .debug_abbrev  0x000005f7      0x158 build/Justu8g2POC/production/u8g2/u8g2_buffer.o
- .debug_abbrev  0x0000074f      0x19b build/Justu8g2POC/production/u8g2/u8g2_circle.o
- .debug_abbrev  0x000008ea       0xec build/Justu8g2POC/production/u8g2/u8g2_cleardisplay.o
- .debug_abbrev  0x000009d6       0x91 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
- .debug_abbrev  0x00000a67      0x133 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
- .debug_abbrev  0x00000b9a      0x282 build/Justu8g2POC/production/u8g2/u8g2_font.o
- .debug_abbrev  0x00000e1c       0x52 build/Justu8g2POC/production/u8g2/u8g2_fonts.o
- .debug_abbrev  0x00000e6e      0x13e build/Justu8g2POC/production/u8g2/u8g2_hvline.o
- .debug_abbrev  0x00000fac      0x10e build/Justu8g2POC/production/u8g2/u8g2_input_value.o
- .debug_abbrev  0x000010ba      0x10a build/Justu8g2POC/production/u8g2/u8g2_intersection.o
- .debug_abbrev  0x000011c4      0x119 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
- .debug_abbrev  0x000012dd       0xfb build/Justu8g2POC/production/u8g2/u8g2_line.o
- .debug_abbrev  0x000013d8      0x124 build/Justu8g2POC/production/u8g2/u8g2_ll_hvline.o
- .debug_abbrev  0x000014fc      0x128 build/Justu8g2POC/production/u8g2/u8g2_message.o
- .debug_abbrev  0x00001624      0x136 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
- .debug_abbrev  0x0000175a      0x208 build/Justu8g2POC/production/u8g2/u8g2_polygon.o
- .debug_abbrev  0x00001962      0x16b build/Justu8g2POC/production/u8g2/u8g2_selection_list.o
- .debug_abbrev  0x00001acd      0x1b5 build/Justu8g2POC/production/u8g2/u8g2_setup.o
- .debug_abbrev  0x00001c82      0x154 build/Justu8g2POC/production/u8g2/u8log.o
- .debug_abbrev  0x00001dd6      0x115 build/Justu8g2POC/production/u8g2/u8log_u8g2.o
- .debug_abbrev  0x00001eeb      0x10f build/Justu8g2POC/production/u8g2/u8log_u8x8.o
- .debug_abbrev  0x00001ffa      0x212 build/Justu8g2POC/production/u8g2/u8x8_8x8.o
- .debug_abbrev  0x0000220c      0x1a9 build/Justu8g2POC/production/u8g2/u8x8_byte.o
- .debug_abbrev  0x000023b5      0x19e build/Justu8g2POC/production/u8g2/u8x8_cad.o
- .debug_abbrev  0x00002553      0x133 build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
- .debug_abbrev  0x00002686      0x10c build/Justu8g2POC/production/u8g2/u8x8_debounce.o
- .debug_abbrev  0x00002792      0x156 build/Justu8g2POC/production/u8g2/u8x8_display.o
- .debug_abbrev  0x000028e8       0x1b build/Justu8g2POC/production/u8g2/u8x8_fonts.o
- .debug_abbrev  0x00002903       0xb8 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
- .debug_abbrev  0x000029bb       0xcb build/Justu8g2POC/production/u8g2/u8x8_input_value.o
- .debug_abbrev  0x00002a86       0xe5 build/Justu8g2POC/production/u8g2/u8x8_message.o
- .debug_abbrev  0x00002b6b      0x118 build/Justu8g2POC/production/u8g2/u8x8_selection_list.o
- .debug_abbrev  0x00002c83      0x139 build/Justu8g2POC/production/u8g2/u8x8_setup.o
- .debug_abbrev  0x00002dbc      0x139 build/Justu8g2POC/production/u8g2/u8x8_string.o
- .debug_abbrev  0x00002ef5       0xa4 build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
- .debug_abbrev  0x00002f99       0xa4 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
- .debug_abbrev  0x0000303d       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x00003065       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_abbrev  0x0000308d       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x000030b5       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
- .debug_abbrev  0x000030dd       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x0000027e       0xff build/Justu8g2POC/production/u8g2/spi_master.o
+ .debug_abbrev  0x0000037d      0x14d build/Justu8g2POC/production/u8g2/u8g2_bitmap.o
+ .debug_abbrev  0x000004ca      0x129 build/Justu8g2POC/production/u8g2/u8g2_box.o
+ .debug_abbrev  0x000005f3      0x158 build/Justu8g2POC/production/u8g2/u8g2_buffer.o
+ .debug_abbrev  0x0000074b      0x19b build/Justu8g2POC/production/u8g2/u8g2_circle.o
+ .debug_abbrev  0x000008e6       0xec build/Justu8g2POC/production/u8g2/u8g2_cleardisplay.o
+ .debug_abbrev  0x000009d2       0x91 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
+ .debug_abbrev  0x00000a63      0x133 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
+ .debug_abbrev  0x00000b96      0x282 build/Justu8g2POC/production/u8g2/u8g2_font.o
+ .debug_abbrev  0x00000e18       0x52 build/Justu8g2POC/production/u8g2/u8g2_fonts.o
+ .debug_abbrev  0x00000e6a      0x13e build/Justu8g2POC/production/u8g2/u8g2_hvline.o
+ .debug_abbrev  0x00000fa8      0x10e build/Justu8g2POC/production/u8g2/u8g2_input_value.o
+ .debug_abbrev  0x000010b6      0x10a build/Justu8g2POC/production/u8g2/u8g2_intersection.o
+ .debug_abbrev  0x000011c0      0x119 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
+ .debug_abbrev  0x000012d9       0xfb build/Justu8g2POC/production/u8g2/u8g2_line.o
+ .debug_abbrev  0x000013d4      0x124 build/Justu8g2POC/production/u8g2/u8g2_ll_hvline.o
+ .debug_abbrev  0x000014f8      0x128 build/Justu8g2POC/production/u8g2/u8g2_message.o
+ .debug_abbrev  0x00001620      0x136 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
+ .debug_abbrev  0x00001756      0x208 build/Justu8g2POC/production/u8g2/u8g2_polygon.o
+ .debug_abbrev  0x0000195e      0x16b build/Justu8g2POC/production/u8g2/u8g2_selection_list.o
+ .debug_abbrev  0x00001ac9      0x1b5 build/Justu8g2POC/production/u8g2/u8g2_setup.o
+ .debug_abbrev  0x00001c7e      0x154 build/Justu8g2POC/production/u8g2/u8log.o
+ .debug_abbrev  0x00001dd2      0x115 build/Justu8g2POC/production/u8g2/u8log_u8g2.o
+ .debug_abbrev  0x00001ee7      0x10f build/Justu8g2POC/production/u8g2/u8log_u8x8.o
+ .debug_abbrev  0x00001ff6      0x212 build/Justu8g2POC/production/u8g2/u8x8_8x8.o
+ .debug_abbrev  0x00002208      0x1a9 build/Justu8g2POC/production/u8g2/u8x8_byte.o
+ .debug_abbrev  0x000023b1      0x19e build/Justu8g2POC/production/u8g2/u8x8_cad.o
+ .debug_abbrev  0x0000254f      0x133 build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
+ .debug_abbrev  0x00002682      0x10c build/Justu8g2POC/production/u8g2/u8x8_debounce.o
+ .debug_abbrev  0x0000278e      0x156 build/Justu8g2POC/production/u8g2/u8x8_display.o
+ .debug_abbrev  0x000028e4       0x1b build/Justu8g2POC/production/u8g2/u8x8_fonts.o
+ .debug_abbrev  0x000028ff       0xb8 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
+ .debug_abbrev  0x000029b7       0xcb build/Justu8g2POC/production/u8g2/u8x8_input_value.o
+ .debug_abbrev  0x00002a82       0xe5 build/Justu8g2POC/production/u8g2/u8x8_message.o
+ .debug_abbrev  0x00002b67      0x118 build/Justu8g2POC/production/u8g2/u8x8_selection_list.o
+ .debug_abbrev  0x00002c7f      0x139 build/Justu8g2POC/production/u8g2/u8x8_setup.o
+ .debug_abbrev  0x00002db8      0x139 build/Justu8g2POC/production/u8g2/u8x8_string.o
+ .debug_abbrev  0x00002ef1       0xa4 build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
+ .debug_abbrev  0x00002f95       0xa4 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
+ .debug_abbrev  0x00003039       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00003061       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x00003089       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x000030b1       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
+ .debug_abbrev  0x000030d9       0x28 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .debug_line     0x00000000     0x3b54
  *(.debug_line)
@@ -1666,52 +1666,52 @@ END GROUP
  .debug_line    0x00003a0b       0xa4 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
  .debug_line    0x00003aaf       0xa5 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_frame    0x00000000     0x2b18
+.debug_frame    0x00000000     0x2b1c
  *(.debug_frame)
  .debug_frame   0x00000000       0x2c build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
  .debug_frame   0x0000002c       0xa4 build/Justu8g2POC/production/u8g2/common.o
- .debug_frame   0x000000d0       0x74 build/Justu8g2POC/production/u8g2/spi_master.o
- .debug_frame   0x00000144      0x108 build/Justu8g2POC/production/u8g2/u8g2_bitmap.o
- .debug_frame   0x0000024c       0xa0 build/Justu8g2POC/production/u8g2/u8g2_box.o
- .debug_frame   0x000002ec      0x154 build/Justu8g2POC/production/u8g2/u8g2_buffer.o
- .debug_frame   0x00000440      0x1c0 build/Justu8g2POC/production/u8g2/u8g2_circle.o
- .debug_frame   0x00000600       0x34 build/Justu8g2POC/production/u8g2/u8g2_cleardisplay.o
- .debug_frame   0x00000634       0x50 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
- .debug_frame   0x00000684       0x58 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
- .debug_frame   0x000006dc      0x6c8 build/Justu8g2POC/production/u8g2/u8g2_font.o
- .debug_frame   0x00000da4      0x108 build/Justu8g2POC/production/u8g2/u8g2_hvline.o
- .debug_frame   0x00000eac       0x34 build/Justu8g2POC/production/u8g2/u8g2_input_value.o
- .debug_frame   0x00000ee0       0x54 build/Justu8g2POC/production/u8g2/u8g2_intersection.o
- .debug_frame   0x00000f34       0x54 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
- .debug_frame   0x00000f88       0x34 build/Justu8g2POC/production/u8g2/u8g2_line.o
- .debug_frame   0x00000fbc       0x58 build/Justu8g2POC/production/u8g2/u8g2_ll_hvline.o
- .debug_frame   0x00001014       0x58 build/Justu8g2POC/production/u8g2/u8g2_message.o
- .debug_frame   0x0000106c       0x58 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
- .debug_frame   0x000010c4      0x240 build/Justu8g2POC/production/u8g2/u8g2_polygon.o
- .debug_frame   0x00001304       0xc4 build/Justu8g2POC/production/u8g2/u8g2_selection_list.o
- .debug_frame   0x000013c8      0x2e0 build/Justu8g2POC/production/u8g2/u8g2_setup.o
- .debug_frame   0x000016a8      0x260 build/Justu8g2POC/production/u8g2/u8log.o
- .debug_frame   0x00001908       0x58 build/Justu8g2POC/production/u8g2/u8log_u8g2.o
- .debug_frame   0x00001960       0x7c build/Justu8g2POC/production/u8g2/u8log_u8x8.o
- .debug_frame   0x000019dc      0x314 build/Justu8g2POC/production/u8g2/u8x8_8x8.o
- .debug_frame   0x00001cf0      0x390 build/Justu8g2POC/production/u8g2/u8x8_byte.o
- .debug_frame   0x00002080      0x304 build/Justu8g2POC/production/u8g2/u8x8_cad.o
- .debug_frame   0x00002384      0x10c build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
- .debug_frame   0x00002490       0x78 build/Justu8g2POC/production/u8g2/u8x8_debounce.o
- .debug_frame   0x00002508      0x1e0 build/Justu8g2POC/production/u8g2/u8x8_display.o
- .debug_frame   0x000026e8       0x34 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
- .debug_frame   0x0000271c       0x34 build/Justu8g2POC/production/u8g2/u8x8_input_value.o
- .debug_frame   0x00002750       0x58 build/Justu8g2POC/production/u8g2/u8x8_message.o
- .debug_frame   0x000027a8       0xbc build/Justu8g2POC/production/u8g2/u8x8_selection_list.o
- .debug_frame   0x00002864       0x98 build/Justu8g2POC/production/u8g2/u8x8_setup.o
- .debug_frame   0x000028fc       0xbc build/Justu8g2POC/production/u8g2/u8x8_string.o
- .debug_frame   0x000029b8       0x54 build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
- .debug_frame   0x00002a0c       0x54 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
- .debug_frame   0x00002a60       0x2c c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_frame   0x00002a8c       0x20 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_frame   0x00002aac       0x20 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_frame   0x00002acc       0x2c c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
- .debug_frame   0x00002af8       0x20 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x000000d0       0x78 build/Justu8g2POC/production/u8g2/spi_master.o
+ .debug_frame   0x00000148      0x108 build/Justu8g2POC/production/u8g2/u8g2_bitmap.o
+ .debug_frame   0x00000250       0xa0 build/Justu8g2POC/production/u8g2/u8g2_box.o
+ .debug_frame   0x000002f0      0x154 build/Justu8g2POC/production/u8g2/u8g2_buffer.o
+ .debug_frame   0x00000444      0x1c0 build/Justu8g2POC/production/u8g2/u8g2_circle.o
+ .debug_frame   0x00000604       0x34 build/Justu8g2POC/production/u8g2/u8g2_cleardisplay.o
+ .debug_frame   0x00000638       0x50 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
+ .debug_frame   0x00000688       0x58 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
+ .debug_frame   0x000006e0      0x6c8 build/Justu8g2POC/production/u8g2/u8g2_font.o
+ .debug_frame   0x00000da8      0x108 build/Justu8g2POC/production/u8g2/u8g2_hvline.o
+ .debug_frame   0x00000eb0       0x34 build/Justu8g2POC/production/u8g2/u8g2_input_value.o
+ .debug_frame   0x00000ee4       0x54 build/Justu8g2POC/production/u8g2/u8g2_intersection.o
+ .debug_frame   0x00000f38       0x54 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
+ .debug_frame   0x00000f8c       0x34 build/Justu8g2POC/production/u8g2/u8g2_line.o
+ .debug_frame   0x00000fc0       0x58 build/Justu8g2POC/production/u8g2/u8g2_ll_hvline.o
+ .debug_frame   0x00001018       0x58 build/Justu8g2POC/production/u8g2/u8g2_message.o
+ .debug_frame   0x00001070       0x58 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
+ .debug_frame   0x000010c8      0x240 build/Justu8g2POC/production/u8g2/u8g2_polygon.o
+ .debug_frame   0x00001308       0xc4 build/Justu8g2POC/production/u8g2/u8g2_selection_list.o
+ .debug_frame   0x000013cc      0x2e0 build/Justu8g2POC/production/u8g2/u8g2_setup.o
+ .debug_frame   0x000016ac      0x260 build/Justu8g2POC/production/u8g2/u8log.o
+ .debug_frame   0x0000190c       0x58 build/Justu8g2POC/production/u8g2/u8log_u8g2.o
+ .debug_frame   0x00001964       0x7c build/Justu8g2POC/production/u8g2/u8log_u8x8.o
+ .debug_frame   0x000019e0      0x314 build/Justu8g2POC/production/u8g2/u8x8_8x8.o
+ .debug_frame   0x00001cf4      0x390 build/Justu8g2POC/production/u8g2/u8x8_byte.o
+ .debug_frame   0x00002084      0x304 build/Justu8g2POC/production/u8g2/u8x8_cad.o
+ .debug_frame   0x00002388      0x10c build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
+ .debug_frame   0x00002494       0x78 build/Justu8g2POC/production/u8g2/u8x8_debounce.o
+ .debug_frame   0x0000250c      0x1e0 build/Justu8g2POC/production/u8g2/u8x8_display.o
+ .debug_frame   0x000026ec       0x34 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
+ .debug_frame   0x00002720       0x34 build/Justu8g2POC/production/u8g2/u8x8_input_value.o
+ .debug_frame   0x00002754       0x58 build/Justu8g2POC/production/u8g2/u8x8_message.o
+ .debug_frame   0x000027ac       0xbc build/Justu8g2POC/production/u8g2/u8x8_selection_list.o
+ .debug_frame   0x00002868       0x98 build/Justu8g2POC/production/u8g2/u8x8_setup.o
+ .debug_frame   0x00002900       0xbc build/Justu8g2POC/production/u8g2/u8x8_string.o
+ .debug_frame   0x000029bc       0x54 build/Justu8g2POC/production/u8g2/u8x8_u16toa.o
+ .debug_frame   0x00002a10       0x54 build/Justu8g2POC/production/u8g2/u8x8_u8toa.o
+ .debug_frame   0x00002a64       0x2c c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x00002a90       0x20 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_frame   0x00002ab0       0x20 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x00002ad0       0x2c c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
+ .debug_frame   0x00002afc       0x20 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .debug_str      0x00000000      0x30d
  *(.debug_str)
@@ -1908,19 +1908,19 @@ LOAD data_init
 .reginfo        0x00000000       0x18
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\debug-exception-return.o
 
-.stack          0xa0000580      0x400
- .stack         0xa0000580      0x400 stack
+.stack          0xa0000578      0x400
+ .stack         0xa0000578      0x400 stack
 
 .bss            0xa0000028      0x508
  .bss           0xa0000028      0x480 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
  .bss           0xa00004a8       0x88 build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
 
-.data           0xa0000530       0x10
- .data          0xa0000530       0x10 build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
-                0xa0000530                lineBuffer
+.bss            0xa0000530       0x10
+ .bss           0xa0000530       0x10 build/Justu8g2POC/production/u8g2/u8x8_cad.o
 
-.bss            0xa0000540       0x10
- .bss           0xa0000540       0x10 build/Justu8g2POC/production/u8g2/u8x8_cad.o
+.data           0xa0000540        0xc
+ .data          0xa0000540        0xc build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
+                0xa0000540                lineBuffer
 
 ._debug_exception
                 0xbfc00480       0x2c
@@ -2092,119 +2092,119 @@ LOAD data_init
                 0x9d009828                u8g2_ll_hvline_vertical_top_lsb
                 0x9d009a80                u8g2_ll_hvline_horizontal_right_lsb
 
-.text           0x9d009c90      0x59c
- .text          0x9d009c90      0x2f8 build/Justu8g2POC/production/u8g2/spi_master.o
+.text           0x9d009c90      0x588
+ .text          0x9d009c90      0x2e4 build/Justu8g2POC/production/u8g2/spi_master.o
                 0x9d009c90                SPI_Init
-                0x9d009ec0                SPI_Tx
-                0x9d009f00                SPI_TxBuffer
- .text          0x9d009f88      0x2a4 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
-                0x9d009f88                u8g2_GetKerning
-                0x9d00a12c                u8g2_GetKerningByTable
+                0x9d009e88                SPI_Tx
+                0x9d009ef4                SPI_TxBuffer
+ .text          0x9d009f74      0x2a4 build/Justu8g2POC/production/u8g2/u8g2_kerning.o
+                0x9d009f74                u8g2_GetKerning
+                0x9d00a118                u8g2_GetKerningByTable
 
-.text           0x9d00a22c      0x4d4
- .text          0x9d00a22c      0x284 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
-                0x9d00a22c                u8x8_pic32_gpio_and_delay
-                0x9d00a36c                u8x8_byte_pic32_hw_spi
- .text          0x9d00a4b0      0x250 build/Justu8g2POC/production/u8g2/common.o
-                0x9d00a4b0                __delay_ms
-                0x9d00a534                TIM1_ISR
-                0x9d00a5d4                getSysTick
-                0x9d00a5f8                sysInit
+.text           0x9d00a218      0x4d4
+ .text          0x9d00a218      0x284 build/Justu8g2POC/production/u8g2/u8g2_pic32mz.o
+                0x9d00a218                u8x8_pic32_gpio_and_delay
+                0x9d00a358                u8x8_byte_pic32_hw_spi
+ .text          0x9d00a49c      0x250 build/Justu8g2POC/production/u8g2/common.o
+                0x9d00a49c                __delay_ms
+                0x9d00a520                TIM1_ISR
+                0x9d00a5c0                getSysTick
+                0x9d00a5e4                sysInit
 
-.text           0x9d00a700      0x380
- .text          0x9d00a700      0x1f4 build/Justu8g2POC/production/u8g2/u8x8_setup.o
-                0x9d00a700                u8x8_dummy_cb
-                0x9d00a73c                u8x8_d_null_cb
-                0x9d00a7d0                u8x8_SetupDefaults
-                0x9d00a874                u8x8_Setup
- .text          0x9d00a8f4      0x18c build/Justu8g2POC/production/u8g2/u8g2_intersection.o
-                0x9d00a8f4                u8g2_is_intersection_decision_tree
-                0x9d00a9d8                u8g2_IsIntersection
+.text           0x9d00a6ec      0x380
+ .text          0x9d00a6ec      0x1f4 build/Justu8g2POC/production/u8g2/u8x8_setup.o
+                0x9d00a6ec                u8x8_dummy_cb
+                0x9d00a728                u8x8_d_null_cb
+                0x9d00a7bc                u8x8_SetupDefaults
+                0x9d00a860                u8x8_Setup
+ .text          0x9d00a8e0      0x18c build/Justu8g2POC/production/u8g2/u8g2_intersection.o
+                0x9d00a8e0                u8g2_is_intersection_decision_tree
+                0x9d00a9c4                u8g2_IsIntersection
 
-.text           0x9d00aa80      0x288
- .text          0x9d00aa80      0x150 build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
-                0x9d00aa80                main
- .text          0x9d00abd0      0x138 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
-                0x9d00abd0                u8g2_Setup_ssd1306_128x64_noname_1
-                0x9d00ac6c                u8g2_Setup_ssd1306_128x64_noname_f
+.text           0x9d00aa6c      0x288
+ .text          0x9d00aa6c      0x150 build/Justu8g2POC/production/u8g2/u8g2_TestHarness_main.o
+                0x9d00aa6c                main
+ .text          0x9d00abbc      0x138 build/Justu8g2POC/production/u8g2/u8g2_d_setup.o
+                0x9d00abbc                u8g2_Setup_ssd1306_128x64_noname_1
+                0x9d00ac58                u8g2_Setup_ssd1306_128x64_noname_f
 
-.rodata         0x9d00ad08      0x128
- .rodata        0x9d00ad08      0x128 build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
+.rodata         0x9d00acf4      0x128
+ .rodata        0x9d00acf4      0x128 build/Justu8g2POC/production/u8g2/u8x8_d_ssd1306_128x64_noname.o
 
 .text.general_exception
-                0x9d00ae30       0xdc
+                0x9d00ae1c       0xdc
  .text.general_exception
-                0x9d00ae30       0xdc c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                0x9d00ae30                _general_exception_context
+                0x9d00ae1c       0xdc c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+                0x9d00ae1c                _general_exception_context
 
-.dinit          0x9d00af0c       0xb0
- .dinit         0x9d00af0c       0xb0 data_init
+.dinit          0x9d00aef8       0xb0
+ .dinit         0x9d00aef8       0xb0 data_init
 
-.text           0x9d00afbc      0x12c
- .text          0x9d00afbc       0xa8 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(memset.o)
-                0x9d00afbc                memset
- .text          0x9d00b064       0x84 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                0x9d00b064                __pic32_data_init
+.text           0x9d00afa8      0x12c
+ .text          0x9d00afa8       0xa8 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(memset.o)
+                0x9d00afa8                memset
+ .text          0x9d00b050       0x84 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
+                0x9d00b050                __pic32_data_init
 
-.text           0x9d00b0e8       0xd0
- .text          0x9d00b0e8       0x70 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
-                0x9d00b0e8                u8g2_m_16_8_1
-                0x9d00b120                u8g2_m_16_8_f
- .text          0x9d00b158       0x60 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
-                0x9d00b158                u8x8_gpio_call
+.text           0x9d00b0d4       0xd0
+ .text          0x9d00b0d4       0x70 build/Justu8g2POC/production/u8g2/u8g2_d_memory.o
+                0x9d00b0d4                u8g2_m_16_8_1
+                0x9d00b10c                u8g2_m_16_8_f
+ .text          0x9d00b144       0x60 build/Justu8g2POC/production/u8g2/u8x8_gpio.o
+                0x9d00b144                u8x8_gpio_call
 
 .text.main_entry
-                0x9d00b1b8       0x54
+                0x9d00b1a4       0x54
  .text.main_entry
-                0x9d00b1b8       0x54 C:\Users\anifs\AppData\Local\Temp\ccOKtRjZ.o
-                0x9d00b1ec                __crt0_exit
+                0x9d00b1a4       0x54 C:\Users\anifs\AppData\Local\Temp\ccJ1ODln.o
+                0x9d00b1d8                __crt0_exit
 
 .text._bootstrap_exception_handler
-                0x9d00b20c       0x48
+                0x9d00b1f8       0x48
  .text._bootstrap_exception_handler
-                0x9d00b20c       0x48 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d00b20c                _bootstrap_exception_handler
+                0x9d00b1f8       0x48 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d00b1f8                _bootstrap_exception_handler
 
 .text._general_exception_handler
-                0x9d00b254       0x48
+                0x9d00b240       0x48
  .text._general_exception_handler
-                0x9d00b254       0x48 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
-                0x9d00b254                _general_exception_handler
+                0x9d00b240       0x48 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
+                0x9d00b240                _general_exception_handler
 
 .vector_default
-                0x9d00b29c       0x48
+                0x9d00b288       0x48
  .vector_default
-                0x9d00b29c       0x48 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
-                0x9d00b29c                _DefaultInterrupt
+                0x9d00b288       0x48 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x9d00b288                _DefaultInterrupt
 
-.text           0x9d00b2e4       0x44
- .text          0x9d00b2e4       0x44 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
-                0x9d00b2e4                __pic32_software_reset
+.text           0x9d00b2d0       0x44
+ .text          0x9d00b2d0       0x44 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
+                0x9d00b2d0                __pic32_software_reset
 
-.rodata         0x9d00b328       0x54
- .rodata        0x9d00b328       0x3c build/Justu8g2POC/production/u8g2/u8g2_setup.o
-                0x9d00b328                u8g2_cb_r0
-                0x9d00b334                u8g2_cb_r1
-                0x9d00b340                u8g2_cb_r2
-                0x9d00b34c                u8g2_cb_r3
-                0x9d00b358                u8g2_cb_mirror
- .rodata        0x9d00b364       0x18 build/Justu8g2POC/production/u8g2/u8x8_setup.o
+.rodata         0x9d00b314       0x54
+ .rodata        0x9d00b314       0x3c build/Justu8g2POC/production/u8g2/u8g2_setup.o
+                0x9d00b314                u8g2_cb_r0
+                0x9d00b320                u8g2_cb_r1
+                0x9d00b32c                u8g2_cb_r2
+                0x9d00b338                u8g2_cb_r3
+                0x9d00b344                u8g2_cb_mirror
+ .rodata        0x9d00b350       0x18 build/Justu8g2POC/production/u8g2/u8x8_setup.o
 
-.text           0x9d00b37c       0x18
- .text          0x9d00b37c       0x18 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                0x9d00b37c                _nmi_handler
+.text           0x9d00b368       0x18
+ .text          0x9d00b368       0x18 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+                0x9d00b368                _nmi_handler
 
-.rodata         0x9d00b394        0x8
- .rodata        0x9d00b394        0x8 build/Justu8g2POC/production/u8g2/u8x8_display.o
+.rodata         0x9d00b380        0x8
+ .rodata        0x9d00b380        0x8 build/Justu8g2POC/production/u8g2/u8x8_display.o
 
 .text._on_reset
-                0x9d00b39c        0x8
+                0x9d00b388        0x8
  .text._on_reset
-                0x9d00b39c        0x8 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                0x9d00b39c                _on_reset
+                0x9d00b388        0x8 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x9d00b388                _on_reset
 
 .text._on_bootstrap
-                0x9d00b3a4        0x8
+                0x9d00b390        0x8
  .text._on_bootstrap
-                0x9d00b3a4        0x8 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                0x9d00b3a4                _on_bootstrap
+                0x9d00b390        0x8 c:/program files/microchip/xc32/v2.41/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x9d00b390                _on_bootstrap

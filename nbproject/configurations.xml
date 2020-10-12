@@ -39,6 +39,8 @@
       <itemPath>ProjectHeaders/EventCheckWrapper.h</itemPath>
       <itemPath>ProjectHeaders/TestHarnessService0.h</itemPath>
       <itemPath>ProjectHeaders/dbprintf.h</itemPath>
+      <itemPath>ProjectHeaders/WriteOLEDService2.h</itemPath>
+      <itemPath>ProjectHeaders/MyService1.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -52,6 +54,8 @@
       <itemPath>ProjectSource/TestHarnessService0.c</itemPath>
       <itemPath>ProjectSource/dbprintf.c</itemPath>
       <itemPath>u8g2/u8g2_TestHarness_main.c</itemPath>
+      <itemPath>ProjectSource/WriteOLEDService2.c</itemPath>
+      <itemPath>ProjectSource/MyService1.c</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="u8g2Headers" projectFiles="true">
       <itemPath>u8g2Headers/common.h</itemPath>
@@ -495,7 +499,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="ProjectSource/TestHarnessService0.c" ex="true" overriding="false">
+      <item path="ProjectSource/TestHarnessService0.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -600,6 +604,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d03ffff"/>
+        <property key="programmerToGoFilePath"
+                  value="U:/anifs/lab3/debug/Justu8g2POC/Justu8g2POC_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -852,6 +858,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d03ffff"/>
+        <property key="programmerToGoFilePath"
+                  value="U:/anifs/lab3/debug/FrameworkWith_u8g2/FrameworkWith_u8g2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

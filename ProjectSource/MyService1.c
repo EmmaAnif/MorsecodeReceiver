@@ -1,10 +1,10 @@
 /****************************************************************************
  Module
    MyService1.c
-
+ * 
 /*----------------------------- Include Files -----------------------------*/
 // This module
-#include "../FrameworkSource/MyService1.h"
+#include "../ProjectHeaders/MyService1.h"
 
 // debugging printf()
 //#include "dbprintf.h"
@@ -122,12 +122,6 @@ ES_Event_t RunMyService1(ES_Event_t ThisEvent)
   ES_Event_t ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
   static char DeferredChar = '1';
-  
-  ES_Event_t MyFirstEvent;
-  MyFirstEvent.EventType   = ES_MY_EVENT_1;
-    
-  ES_Event_t MySecondEvent;
-  MySecondEvent.EventType   = ES_MY_EVENT_2;
 
   switch (ThisEvent.EventType)
   {
@@ -142,10 +136,16 @@ ES_Event_t RunMyService1(ES_Event_t ThisEvent)
     {
       if ('e' == ThisEvent.EventParam)
       {
+        ES_Event_t MyFirstEvent;
+        MyFirstEvent.EventType = ES_MY_EVENT_1;
+        MyFirstEvent.EventParam = 'e';
         ES_PostToService(MyPriority, MyFirstEvent); 
       }
       if ('a' == ThisEvent.EventParam)
       {
+        ES_Event_t MySecondEvent;
+        MySecondEvent.EventType = ES_MY_EVENT_2;
+        MySecondEvent.EventParam = 'a';
         ES_PostToService(MyPriority, MySecondEvent); 
       }
     break;
@@ -157,7 +157,7 @@ ES_Event_t RunMyService1(ES_Event_t ThisEvent)
     break;
     case ES_MY_EVENT_2:   // announce my second event
     {
-      printf("ES_MY_EVENT_1 received with -> %c <- in Service 1\r\n",
+      printf("ES_MY_EVENT_2 received with -> %c <- in Service 1\r\n",
           (char)ThisEvent.EventParam);
     }
     break; 

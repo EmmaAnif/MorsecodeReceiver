@@ -37,12 +37,12 @@ void SPI_Init(void){
     SPI1CONbits.ON = 0; 
     SPI1CONbits.SIDL = 0; //continue in idle mode
     
-    //clear the receive buffer, set enhanced buffer mode
+    //clear the receive buffer, clear enhanced buffer mode
     uint32_t clearBuff;
     while (SPI1STATbits.SPITBE = 0){
         clearBuff = SPI1BUF; //clear the Buffer Register
     }
-    SPI1CONbits.ENHBUF = 1;
+    SPI1CONbits.ENHBUF = 0;
     
     //disable SDI bit
     SPI1CONbits.DISSDI = 1; 
@@ -51,7 +51,7 @@ void SPI_Init(void){
     SPI1CON2bits.SPISGNEXT = 0;
 
     //set BRG register using bit rate
-    uint32_t bitRate = 1e6;
+    uint32_t bitRate = 1e6; //1MHz
     uint32_t PbClk = 20e6; //pic32 clock rate in Hz
     SPI1BRG = (PbClk/(bitRate*2))-1;
 
@@ -97,10 +97,11 @@ void SPI_Init(void){
  
 ****************************************************************************/
 void SPI_Tx(uint8_t data){
-    uint8_t readBUF;
-    SPI1BUF = data;
-    while (SPI1STATbits.SPITBF = 1){}
-    readBUF = SPI1BUF;
+    if (SPI1STATbits.SPITBE = 1){
+        SPI1BUF = data;
+        while (SPI1STATbits.SPITBF = 1){}
+        readBUF = SPI1BUF;
+    }
 }
 
 /****************************************************************************
@@ -118,10 +119,9 @@ void SPI_Tx(uint8_t data){
  
 ****************************************************************************/
 void SPI_TxBuffer(uint8_t *buffer, uint8_t length){
-    uint8_t pBuffer = *buffer;
     uint8_t i;
     for (i = 0; i < length; i++){
-        SPI_Tx(pBuffer);
-        pBuffer++;
+        SPI_Tx(*buffer);
+        buffer++;
     }
 }

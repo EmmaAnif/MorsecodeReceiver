@@ -40,6 +40,14 @@
 // actual functionsdefinition
 #include "EventCheckers.h"
 
+#include "../u8g2Headers/u8g2TestHarness_main.h"
+#include "../u8g2Headers/common.h"
+#include "../u8g2Headers/spi_master.h"
+#include "../u8g2Headers/u8g2.h"
+#include "../u8g2Headers/u8x8.h"
+
+static u8g2_t u8g2;
+
 // This is the event checking function sample. It is not intended to be
 // included in the module. It is only here as a sample to guide you in writing
 // your own event checkers
@@ -121,12 +129,22 @@ bool Check4Keystroke(void)
 
 bool Check4NextPage(void)
 {
-  if !(u8g2_NextPage(&u8g2))   // new key waiting?
+  static uint8_t LastNextPageState = 0;
+  uint8_t CurrentNextPageState;
+  bool returnVal;
+  
+  CurrentNextPageState = u8g2_NextPage(&u8g2);
+  
+  if ((CurrentNextPageState != LastNextPageState) && (CurrentNextPageState == 0))  // 
   {
     ES_Event_t ThisEvent;
     ThisEvent.EventType   = ES_NEXT_PAGE;
     ES_PostAll(ThisEvent);
-    return true;
+    
+    returnVal = true;
   }
-  return false;
+  returnVal = false;
+  LastNextPageState = CurrentNextPageState;
+  
+  return returnVal;
 }

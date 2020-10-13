@@ -5,8 +5,8 @@
 
  ****************************************************************************/
 
-#ifndef WriteOLED_H
-#define WriteOLED_H
+#ifndef PrintOLED_H
+#define PrintOLED_H
 
 // Event Definitions
 #include "ES_Configure.h" /* gets us event definitions */
@@ -16,15 +16,15 @@
 // State definitions for use with the query function
 typedef enum
 {
-  InitPState, NotWriting, Writing
-}WriteOLEDState_t;
+  InitPState2, SendingChar
+}PrintOLEDState_t;
 
 // Public Function Prototypes
 
-bool InitWriteOLED(uint8_t Priority);
-bool PostWriteOLED(ES_Event_t ThisEvent);
-ES_Event_t RunWriteOLED(ES_Event_t ThisEvent);
-WriteOLEDState_t QueryWriteOLED(void);
+bool InitPrintOLED(uint8_t Priority);
+bool PostPrintOLED(ES_Event_t ThisEvent);
+ES_Event_t RunPrintOLED(ES_Event_t ThisEvent);
+PrintOLEDState_t QueryPrintOLED(void);
 
 #endif /* FSMTemplate_H */
 

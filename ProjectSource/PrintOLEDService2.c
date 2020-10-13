@@ -25,15 +25,12 @@
 */
 #include "ES_Configure.h"
 #include "ES_Framework.h"
+#include "../ProjectHeaders/PrintOLEDService2.h"
 #include "../ProjectHeaders/WriteOLEDService1.h"
-#include "../u8g2Headers/u8g2TestHarness_main.h"
-#include "../u8g2Headers/common.h"
-#include "../u8g2Headers/spi_master.h"
-#include "../u8g2Headers/u8g2.h"
-#include "../u8g2Headers/u8x8.h"
 
 /*----------------------------- Module Defines ----------------------------*/
-
+// these times assume a 10.000mS/tick timing
+#define ONE_SEC 1000
 /*---------------------------- Module Functions ---------------------------*/
 /* prototypes for private functions for this machine.They should be functions
    relevant to the behavior of this state machine
@@ -43,15 +40,7 @@
 // everybody needs a state variable, you may need others as well.
 // type of state variable should match htat of enum in header file
 
-extern uint8_t u8x8_pic32_gpio_and_delay(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr);
-extern uint8_t u8x8_byte_pic32_hw_spi(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr);
-
-static WriteOLEDState_t CurrentState;
-static u8g2_t u8g2;
-
-static uint16_t offset=118; // start at the rightmost character position
-static uint16_t width;
-char charBuffer[] = "statemachine";
+static PrintOLEDState_t CurrentState;
 
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;
@@ -75,14 +64,13 @@ static uint8_t MyPriority;
  Author
      J. Edward Carryer, 10/23/11, 18:55
 ****************************************************************************/
-bool InitWriteOLED(uint8_t Priority)
+bool InitPrintOLED(uint8_t Priority)
 {
   ES_Event_t ThisEvent;
-  width = (u8g2_GetStrWidth(&u8g2, charBuffer)/2);
 
   MyPriority = Priority;
   // put us into the Initial PseudoState
-  CurrentState = InitPState;
+  CurrentState = InitPState2;
   // post the initial transition event
   ThisEvent.EventType = ES_INIT;
   if (ES_PostToService(MyPriority, ThisEvent) == true)
@@ -112,7 +100,7 @@ bool InitWriteOLED(uint8_t Priority)
  Author
      J. Edward Carryer, 10/23/11, 19:25
 ****************************************************************************/
-bool PostWriteOLED(ES_Event_t ThisEvent)
+bool PostPrintOLED(ES_Event_t ThisEvent)
 {
   return ES_PostToService(MyPriority, ThisEvent);
 }
@@ -134,94 +122,42 @@ bool PostWriteOLED(ES_Event_t ThisEvent)
  Author
    J. Edward Carryer, 01/15/12, 15:23
 ****************************************************************************/
-ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
+ES_Event_t RunPrintOLED(ES_Event_t ThisEvent)
 {
   ES_Event_t ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
 
   switch (CurrentState)
   {
-    case InitPState:        // If current state is initial Psedudo State
+    case InitPState2:        // If current state is initial Pseudo State
     {
         if (ThisEvent.EventType == ES_INIT)    // only respond to ES_Init
         {
-            // sysInit is used for timing setup for the test harness, the framework will
-            // give you the timing that you need for Lab 3
-            sysInit(); 
-            SPI_Init(); // hmm, I wonder who will write this function :-)
-
-            // build up the u8g2 structure with the proper values for our display
-            // use the next 5 lines verbatim in your initialization
-            u8g2_Setup_ssd1306_128x64_noname_f(&u8g2, U8G2_R0, u8x8_byte_pic32_hw_spi, 
-                                               u8x8_pic32_gpio_and_delay);
-            // pass all that stuff on to the display to initialize it
-            u8g2_InitDisplay(&u8g2);
-            // turn off power save so that the display will be on
-            u8g2_SetPowerSave(&u8g2, 0);
-            // choose the font. this one is mono-spaced and has a reasonable size
-            u8g2_SetFont(&u8g2, u8g2_font_t0_18_mr);
-            // overwrite the background color of newly written characters
-            u8g2_SetFontMode(&u8g2, 0);
-            // width is used only for the scrolling demo
-            width = (u8g2_GetStrWidth(&u8g2, charBuffer)/2);
             // this is where you would put any actions associated with the
             // transition from the initial pseudo-state into the actual
             // initial state
-
+            ES_Event_t OLEDEvent;
+            OLEDEvent.EventType = ES_OLED_CHAR;
+            PostWriteOLED(OLEDEvent);
+            ES_Timer_InitTimer(CHAR_TIMER, ONE_SEC);
             // now put the machine into the actual initial state
-            CurrentState = NotWriting;
+            CurrentState = SendingChar;
         }
     }
     break;
 
-    case NotWriting:        // If current state is state one
+    case SendingChar:        // If current state is Sending Char
     {
-      switch (ThisEvent.EventType)
-      {
-        case ES_NEW_KEY:  //If event is event one
-        {   // Execute action function for state one : event one
-          if ('s' == ThisEvent.EventParam){
-            u8g2_FirstPage(&u8g2);
-            u8g2_DrawStr(&u8g2, offset, 37, charBuffer);
-            CurrentState = Writing;  //Decide what the next state will be
-          } 
+        if (ThisEvent.EventType == ES_TIMEOUT)    // only respond to ES_Init
+        {
+            ES_Event_t OLEDEvent;
+            OLEDEvent.EventType = ES_OLED_CHAR;
+            PostWriteOLED(OLEDEvent);
+            ES_Timer_InitTimer(CHAR_TIMER, ONE_SEC);
+            // now put the machine into the SendingChar state
+            CurrentState = SendingChar;
         }
-        break;
-        case ES_OLED_CHAR:  //If event is event one
-
-        {   // Execute action function for state one : event one
-            u8g2_FirstPage(&u8g2);
-            u8g2_DrawStr(&u8g2, offset, 37, charBuffer);
-            CurrentState = Writing;  //Decide what the next state will be
-        }
-        break;
-
-        // repeat cases as required for relevant events
-        default:
-          ;
-      }  // end switch on CurrentEvent
-    }
-    break;
-    
-    case Writing:        // If current state is state one
-    {
-      switch (ThisEvent.EventType)
-      {
-        case ES_NEXT_PAGE:  //If event is event one
-
-        {   // Execute action function for state one : event one
-            offset -= 9; 
-            if(offset < -width) offset = 0; // reset and start over
-        
-            __delay_ms(1000); // so that we can see the characters step across
-            CurrentState = NotWriting;  //Decide what the next state will be
-        }
-        break;
-
-        // repeat cases as required for relevant events
-        default:
-          ;
-      }  // end switch on CurrentEvent
+      // end switch on CurrentEvent
     }
     break;
     
@@ -249,7 +185,7 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
  Author
      J. Edward Carryer, 10/23/11, 19:21
 ****************************************************************************/
-WriteOLEDState_t QueryWriteOLED(void)
+PrintOLEDState_t QueryPrintOLED(void)
 {
   return CurrentState;
 }

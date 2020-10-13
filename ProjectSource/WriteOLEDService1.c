@@ -147,9 +147,8 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {
             // sysInit is used for timing setup for the test harness, the framework will
             // give you the timing that you need for Lab 3
-            sysInit(); 
+            //sysInit();
             SPI_Init(); // hmm, I wonder who will write this function :-)
-
             // build up the u8g2 structure with the proper values for our display
             // use the next 5 lines verbatim in your initialization
             u8g2_Setup_ssd1306_128x64_noname_f(&u8g2, U8G2_R0, u8x8_byte_pic32_hw_spi, 
@@ -169,6 +168,8 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
             // initial state
 
             // now put the machine into the actual initial state
+            puts("Service 01:");
+            printf("\rES_INIT received in Service %d\r\n", MyPriority);
             CurrentState = NotWriting;
         }
     }
@@ -183,6 +184,8 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
           if ('s' == ThisEvent.EventParam){
             u8g2_FirstPage(&u8g2);
             u8g2_DrawStr(&u8g2, offset, 37, charBuffer);
+            printf("ES_NEW_KEY received with -> %c <- in Service 1\r\n",
+            (char)ThisEvent.EventParam);
             CurrentState = Writing;  //Decide what the next state will be
           } 
         }
@@ -192,6 +195,8 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {   // Execute action function for state one : event one
             u8g2_FirstPage(&u8g2);
             u8g2_DrawStr(&u8g2, offset, 37, charBuffer);
+            printf("ES_OLED_CHAR received with -> %c <- in Service 1\r\n",
+            (char)ThisEvent.EventParam);
             CurrentState = Writing;  //Decide what the next state will be
         }
         break;
@@ -203,7 +208,7 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
     }
     break;
     
-    case Writing:        // If current state is state one
+    case Writing:// If current state is state one
     {
       switch (ThisEvent.EventType)
       {
@@ -212,8 +217,8 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {   // Execute action function for state one : event one
             offset -= 9; 
             if(offset < -width) offset = 0; // reset and start over
-        
-            __delay_ms(1000); // so that we can see the characters step across
+            printf("ES_NEXT_PAGE received with -> %c <- in Service 1\r\n",
+            (char)ThisEvent.EventParam);
             CurrentState = NotWriting;  //Decide what the next state will be
         }
         break;

@@ -127,24 +127,24 @@ bool Check4Keystroke(void)
   return false;
 }
 
-bool Check4NextPage(void)
-{
-  static uint8_t LastNextPageState = 0;
-  uint8_t CurrentNextPageState;
-  bool returnVal;
-  
-  CurrentNextPageState = u8g2_NextPage(&u8g2);
-  
-  if ((CurrentNextPageState != LastNextPageState) && (CurrentNextPageState == 0))  // 
-  {
-    ES_Event_t ThisEvent;
-    ThisEvent.EventType   = ES_NEXT_PAGE;
-    ES_PostAll(ThisEvent);
-    
-    returnVal = true;
-  }
-  returnVal = false;
-  LastNextPageState = CurrentNextPageState;
-  
-  return returnVal;
-}
+//bool Check4NextPage(void)
+//{
+//  static uint8_t LastNextPageState = 0;
+//  uint8_t CurrentNextPageState;
+//  bool returnVal;
+//  
+//  CurrentNextPageState = u8g2_NextPage(&u8g2);
+//  
+//  if ((CurrentNextPageState != LastNextPageState) && (CurrentNextPageState == 0))  // 
+//  {
+//    ES_Event_t ThisEvent;
+//    ThisEvent.EventType   = ES_NEXT_PAGE;
+//    ES_PostAll(ThisEvent);
+//    
+//    returnVal = true;
+//  }
+//  returnVal = false;
+//  LastNextPageState = CurrentNextPageState;
+//  
+//  return returnVal;
+//}

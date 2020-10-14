@@ -55,6 +55,7 @@ char charBuffer[] = "statemachine";
 
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;
+static uint8_t LastNextPageState;
 
 /*------------------------------ Module Code ------------------------------*/
 /****************************************************************************
@@ -78,9 +79,9 @@ static uint8_t MyPriority;
 bool InitWriteOLED(uint8_t Priority)
 {
   ES_Event_t ThisEvent;
-  width = (u8g2_GetStrWidth(&u8g2, charBuffer)/2);
 
   MyPriority = Priority;
+  LastNextPageState = 0;
   // put us into the Initial PseudoState
   CurrentState = InitPState;
   // post the initial transition event
@@ -147,7 +148,6 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {
             // sysInit is used for timing setup for the test harness, the framework will
             // give you the timing that you need for Lab 3
-            //sysInit();
             SPI_Init(); // hmm, I wonder who will write this function :-)
             // build up the u8g2 structure with the proper values for our display
             // use the next 5 lines verbatim in your initialization
@@ -184,6 +184,7 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
           if ('s' == ThisEvent.EventParam){
             u8g2_FirstPage(&u8g2);
             u8g2_DrawStr(&u8g2, offset, 37, charBuffer);
+            LastNextPageState = 1;
             printf("ES_NEW_KEY received with -> %c <- in Service 1\r\n",
             (char)ThisEvent.EventParam);
             CurrentState = Writing;  //Decide what the next state will be
@@ -195,6 +196,7 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {   // Execute action function for state one : event one
             u8g2_FirstPage(&u8g2);
             u8g2_DrawStr(&u8g2, offset, 37, charBuffer);
+            LastNextPageState = 1;
             printf("ES_OLED_CHAR received with -> %c <- in Service 1\r\n",
             (char)ThisEvent.EventParam);
             CurrentState = Writing;  //Decide what the next state will be
@@ -263,3 +265,23 @@ WriteOLEDState_t QueryWriteOLED(void)
  private functions
  ***************************************************************************/
 
+bool Check4NextPage(void)
+{
+  uint8_t CurrentNextPageState;
+  bool returnVal;
+  
+  CurrentNextPageState = u8g2_NextPage(&u8g2);
+  
+  if ((CurrentNextPageState != LastNextPageState) && (CurrentNextPageState == 0))  // 
+  {
+    ES_Event_t ThisEvent;
+    ThisEvent.EventType   = ES_NEXT_PAGE;
+    ES_PostAll(ThisEvent);
+    
+    returnVal = true;
+  }
+  returnVal = false;
+  LastNextPageState = CurrentNextPageState;
+  
+  return returnVal;
+}

@@ -33,7 +33,7 @@
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 2
+#define NUM_SERVICES 3
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -298,7 +298,7 @@ typedef enum
 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST Check4Keystroke//, Check4NextPage
+#define EVENT_CHECK_LIST Check4Keystroke, Check4NextPage
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
@@ -321,7 +321,7 @@ typedef enum
 #define TIMER11_RESP_FUNC TIMER_UNUSED
 #define TIMER12_RESP_FUNC TIMER_UNUSED
 #define TIMER13_RESP_FUNC TIMER_UNUSED
-#define TIMER14_RESP_FUNC TIMER_UNUSED
+#define TIMER14_RESP_FUNC PostPrintOLED
 #define TIMER15_RESP_FUNC PostTestHarnessService0
 
 /****************************************************************************/

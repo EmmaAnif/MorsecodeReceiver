@@ -138,8 +138,8 @@ ES_Event_t RunPrintOLED(ES_Event_t ThisEvent)
             // initial state
             ES_Event_t OLEDEvent;
             OLEDEvent.EventType = ES_OLED_CHAR;
-            //PostWriteOLED(OLEDEvent);
-            //ES_Timer_InitTimer(CHAR_TIMER, ONE_SEC);
+            PostWriteOLED(OLEDEvent);
+            ES_Timer_InitTimer(CHAR_TIMER, ONE_SEC);
             puts("Service 02:");
             printf("\rES_INIT received in Service %d\r\n", MyPriority);
             // now put the machine into the actual initial state
@@ -154,8 +154,8 @@ ES_Event_t RunPrintOLED(ES_Event_t ThisEvent)
         {
             ES_Event_t OLEDEvent;
             OLEDEvent.EventType = ES_OLED_CHAR;
-            //PostWriteOLED(OLEDEvent);
-            //ES_Timer_InitTimer(CHAR_TIMER, ONE_SEC);
+            PostWriteOLED(OLEDEvent);
+            ES_Timer_InitTimer(CHAR_TIMER, ONE_SEC);
             printf("ES_TIMEOUT received from Timer %d in Service %d\r\n",
             ThisEvent.EventParam, MyPriority);
             // now put the machine into the SendingChar state

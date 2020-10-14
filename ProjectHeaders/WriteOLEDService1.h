@@ -25,6 +25,7 @@ bool InitWriteOLED(uint8_t Priority);
 bool PostWriteOLED(ES_Event_t ThisEvent);
 ES_Event_t RunWriteOLED(ES_Event_t ThisEvent);
 WriteOLEDState_t QueryWriteOLED(void);
+bool Check4NextPage(void);
 
 #endif /* FSMTemplate_H */
 

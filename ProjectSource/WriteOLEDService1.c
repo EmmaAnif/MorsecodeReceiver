@@ -51,7 +51,7 @@ static u8g2_t u8g2;
 
 static uint16_t offset=118; // start at the rightmost character position
 static uint16_t width;
-char charBuffer[] = "statemachine";
+char charBuffer[] = "Emmanuel Anifowose";
 
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;

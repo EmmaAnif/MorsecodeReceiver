@@ -6,15 +6,15 @@
 CND_BASEDIR=`pwd`
 # Justu8g2POC configuration
 CND_ARTIFACT_DIR_Justu8g2POC=dist/Justu8g2POC/production
-CND_ARTIFACT_NAME_Justu8g2POC=Lab3.production.hex
-CND_ARTIFACT_PATH_Justu8g2POC=dist/Justu8g2POC/production/Lab3.production.hex
+CND_ARTIFACT_NAME_Justu8g2POC=lab3_station1.production.hex
+CND_ARTIFACT_PATH_Justu8g2POC=dist/Justu8g2POC/production/lab3_station1.production.hex
 CND_PACKAGE_DIR_Justu8g2POC=${CND_DISTDIR}/Justu8g2POC/package
-CND_PACKAGE_NAME_Justu8g2POC=lab3.tar
-CND_PACKAGE_PATH_Justu8g2POC=${CND_DISTDIR}/Justu8g2POC/package/lab3.tar
+CND_PACKAGE_NAME_Justu8g2POC=lab3station1.tar
+CND_PACKAGE_PATH_Justu8g2POC=${CND_DISTDIR}/Justu8g2POC/package/lab3station1.tar
 # FrameworkWith_u8g2 configuration
 CND_ARTIFACT_DIR_FrameworkWith_u8g2=dist/FrameworkWith_u8g2/production
-CND_ARTIFACT_NAME_FrameworkWith_u8g2=Lab3.production.hex
-CND_ARTIFACT_PATH_FrameworkWith_u8g2=dist/FrameworkWith_u8g2/production/Lab3.production.hex
+CND_ARTIFACT_NAME_FrameworkWith_u8g2=lab3_station1.production.hex
+CND_ARTIFACT_PATH_FrameworkWith_u8g2=dist/FrameworkWith_u8g2/production/lab3_station1.production.hex
 CND_PACKAGE_DIR_FrameworkWith_u8g2=${CND_DISTDIR}/FrameworkWith_u8g2/package
-CND_PACKAGE_NAME_FrameworkWith_u8g2=lab3.tar
-CND_PACKAGE_PATH_FrameworkWith_u8g2=${CND_DISTDIR}/FrameworkWith_u8g2/package/lab3.tar
+CND_PACKAGE_NAME_FrameworkWith_u8g2=lab3station1.tar
+CND_PACKAGE_PATH_FrameworkWith_u8g2=${CND_DISTDIR}/FrameworkWith_u8g2/package/lab3station1.tar

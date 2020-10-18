@@ -10,12 +10,18 @@
 
 #include "ES_Types.h"
 
-// Public Function Prototypes
+// State definitions for use with the query function
+typedef enum
+{
+  InitMorseElements, CalWait4Rise, CalWait4Fall, EOC_WaitRise,
+  EOC_WaitFall, DecodeWaitRise, DecodeWaitFall
+}MorseElementState_t;
 
-bool InitMorseElements(uint8_t Priority);
-bool PostMorseElements(ES_Event_t ThisEvent);
-ES_Event_t RunMorseElements(ES_Event_t ThisEvent);
-bool Check4MorseInput(void);
+// Public Function Prototypes
+bool InitMorseElementsSM(uint8_t Priority);
+bool PostMorseElementsSM(ES_Event_t ThisEvent);
+ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent);
+bool Check4MorseEvent(void);
 
 #endif /* ServTemplate_H */
 

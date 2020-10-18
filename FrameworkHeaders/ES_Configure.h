@@ -59,9 +59,9 @@
 // the header file with the public function prototypes
 #define SERV_1_HEADER "MorseElements.h"
 // the name of the Init function
-#define SERV_1_INIT InitMorseElements
+#define SERV_1_INIT InitMorseElementsSM
 // the name of the run function
-#define SERV_1_RUN RunMorseElements
+#define SERV_1_RUN RunMorseElementsSM
 // How big should this services Queue be?
 #define SERV_1_QUEUE_SIZE 3
 #endif
@@ -260,10 +260,16 @@ typedef enum
   ES_SHORT_TIMEOUT,         /* signals that a short timer has expired */
   /* User-defined events start here */
   ES_NEW_KEY,               /* signals a new key received from terminal */
-  ES_LOCK,
-  ES_UNLOCK,
-  ES_MORSE_RISE,
-  ES_MORSE_FALL
+  ES_RISING_EDGE,
+  ES_FALLING_EDGE,
+  ES_CAL_COMPLETED,
+  ES_EOC_DETECTED,
+  ES_EOW_DETECTED,
+  ES_BUTTON_DOWN,
+  ES_BAD_SPACE,
+  ES_DOT_DETECTED,
+  ES_DASH_DETECTED,
+  ES_BAD_PULSE
 }ES_EventType_t;
 
 /****************************************************************************/
@@ -298,7 +304,7 @@ typedef enum
 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST Check4Keystroke, Check4MorseInput
+#define EVENT_CHECK_LIST Check4Keystroke, Check4MorseEvent
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the

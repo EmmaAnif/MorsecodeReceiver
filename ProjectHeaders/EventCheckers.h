@@ -23,6 +23,6 @@
 // prototypes for event checkers
 
 bool Check4Keystroke(void);
-bool Check4MorseInput(void);
+bool Check4MorseEvent(void);
 
 #endif /* EventCheckers_H */

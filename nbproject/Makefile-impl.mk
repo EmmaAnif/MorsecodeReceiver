@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=lab3_station1
+PROJECTNAME=Lab3
 
 # Active Configuration
 DEFAULTCONF=FrameworkWith_u8g2

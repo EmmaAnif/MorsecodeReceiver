@@ -65,6 +65,12 @@ bool InitMorseElementsSM(uint8_t Priority)
 
   MyPriority = Priority;
   CurrentState = InitMorseElements;
+  //disable analog function on all pins
+  ANSELA = 0;
+  ANSELB = 0;
+  TRISBbits.TRISB4 = 1; //set RB4 to input
+  LastInputState = PORTBbits.RB4; //read from RB4
+  FirstDelta = 0;
   /********************************************
    Initialize the port line to receive Morse Code
    Sample port line and use it to initialize LastInputState
@@ -127,17 +133,49 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
 {
   ES_Event_t ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
+  MorseElementState_t NextState;
+  
   switch (CurrentState)          
   { 
       case InitMorseElements: 
+          if (ThisEvent.EventType == ES_INIT)
+          {
+            puts("Service 01:");
+            printf("\rES_INIT received in Service %d\r\n", MyPriority);
+            NextState = CalWait4Rise;
+          }
+          break;
+          
+      case CalWait4Rise: 
           switch (ThisEvent.EventType)
           {
-            case ES_INIT:
+            case ES_RISING_EDGE:   // announce rise event
             {
-              puts("Service 01:");
-              printf("\rES_INIT received in Service %d\r\n", MyPriority);
+              printf("R ");
+              NextState = CalWait4Fall;
             }
             break;
+            case ES_CAL_COMPLETED:   // announce fall event
+            {
+              NextState = EOC_WaitRise;;
+            }
+            break;
+            default:
+            {}
+             break;
+          }
+      break;
+      
+      case CalWait4Fall: 
+          if (ThisEvent.EventType == ES_FALLING_EDGE)
+          {
+            NextState = CalWait4Rise;
+          }
+          break;
+            
+      case EOC_WaitRise: 
+          switch (ThisEvent.EventType)
+          {
             case ES_RISING_EDGE:   // announce rise event
             {
               printf("R ");
@@ -168,7 +206,8 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
 bool Check4MorseEvent(void)
 {
   bool returnVal = false;
-  uint8_t CurrentInputState;// = readPinState();
+  uint8_t CurrentInputState;
+  CurrentInputState = PORTBbits.RB4;// readPinState();
   
   if (CurrentInputState != LastInputState)
   {

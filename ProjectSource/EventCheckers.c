@@ -37,16 +37,8 @@
 // are defined in ES_Port.c
 #include "ES_Port.h"
 // include our own prototypes to insure consistency between header &
-// actual functionsdefinition
+// actual functions definition
 #include "EventCheckers.h"
-
-#include "../u8g2Headers/u8g2TestHarness_main.h"
-#include "../u8g2Headers/common.h"
-#include "../u8g2Headers/spi_master.h"
-#include "../u8g2Headers/u8g2.h"
-#include "../u8g2Headers/u8x8.h"
-
-static u8g2_t u8g2;
 
 // This is the event checking function sample. It is not intended to be
 // included in the module. It is only here as a sample to guide you in writing

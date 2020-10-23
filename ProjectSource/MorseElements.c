@@ -19,6 +19,8 @@
 #include "ES_Configure.h"
 #include "ES_Framework.h"
 #include "MorseElements.h"
+#include "ES_DeferRecall.h"
+#include "ButtonStatus.h"
 
 /*----------------------------- Module Defines ----------------------------*/
 
@@ -38,7 +40,6 @@ static uint8_t TimeOfLastFall;
 static uint8_t LengthOfDot;
 static uint8_t FirstDelta;
 static uint8_t LastInputState;
-
 
 /*------------------------------ Module Code ------------------------------*/
 /****************************************************************************
@@ -71,6 +72,7 @@ bool InitMorseElementsSM(uint8_t Priority)
   TRISBbits.TRISB4 = 1; //set RB4 to input
   LastInputState = PORTBbits.RB4; //read from RB4
   FirstDelta = 0;
+  InitButtonStatus();
   /********************************************
    Initialize the port line to receive Morse Code
    Sample port line and use it to initialize LastInputState
@@ -140,24 +142,24 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       case InitMorseElements: 
           if (ThisEvent.EventType == ES_INIT)
           {
-            puts("Service 01:");
+            puts("Morse Elements Service:");
             printf("\rES_INIT received in Service %d\r\n", MyPriority);
             NextState = CalWait4Rise;
           }
-          break;
+      break;
           
       case CalWait4Rise: 
           switch (ThisEvent.EventType)
           {
             case ES_RISING_EDGE:   // announce rise event
             {
-              printf("R ");
+              TimeOfLastRise = ThisEvent.EventParam;
               NextState = CalWait4Fall;
             }
             break;
             case ES_CAL_COMPLETED:   // announce fall event
             {
-              NextState = EOC_WaitRise;;
+              NextState = EOC_WaitRise;
             }
             break;
             default:
@@ -169,7 +171,9 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       case CalWait4Fall: 
           if (ThisEvent.EventType == ES_FALLING_EDGE)
           {
+            TimeOfLastFall = ThisEvent.EventParam;
             NextState = CalWait4Rise;
+            TestCalibration();
           }
           break;
             
@@ -178,12 +182,85 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
           {
             case ES_RISING_EDGE:   // announce rise event
             {
-              printf("R ");
+              TimeOfLastRise = ThisEvent.EventParam;
+              NextState = EOC_WaitFall;
+              CharacterizeSpace();
             }
             break;
+            case ES_BUTTON_DOWN:   // announce button down event
+            {
+              NextState = CalWait4Rise;
+              FirstDelta = 0;
+            }
+            break;
+            default:
+            {}
+             break;
+          }
+      break;
+      
+      case EOC_WaitFall: 
+          switch (ThisEvent.EventType)
+          {
+            case ES_FALLING_EDGE:   // announce rise event
+            {
+              TimeOfLastFall = ThisEvent.EventParam;
+              NextState = EOC_WaitRise;
+            }
+            break;
+            case ES_BUTTON_DOWN:   // announce button down event
+            {
+              NextState = CalWait4Rise;
+              FirstDelta = 0;
+            }
+            break;
+            case ES_EOC_DETECTED:  
+            {
+              NextState = DecodeWaitFall;
+            }
+            break;
+            default:
+            {}
+             break;
+          }
+      break;
+      
+      case DecodeWaitRise: 
+          switch (ThisEvent.EventType)
+          {
+            case ES_RISING_EDGE:   // announce rise event
+            {
+              TimeOfLastRise = ThisEvent.EventParam;
+              NextState = DecodeWaitFall;
+              CharacterizeSpace();
+            }
+            break;
+            case ES_BUTTON_DOWN:   // announce button down event
+            {
+              NextState = CalWait4Rise;
+              FirstDelta = 0;
+            }
+            break;
+            default:
+            {}
+             break;
+          }
+      break;
+      
+      case DecodeWaitFall: 
+          switch (ThisEvent.EventType)
+          {
             case ES_FALLING_EDGE:   // announce fall event
             {
-              printf("F ");
+              TimeOfLastFall = ThisEvent.EventParam;
+              NextState = DecodeWaitRise;
+              CharacterizePulse();
+            }
+            break;
+            case ES_BUTTON_DOWN:   // announce button down event
+            {
+              NextState = CalWait4Rise;
+              FirstDelta = 0;
             }
             break;
             default:
@@ -196,7 +273,9 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       {}
       break;
   }
-
+  
+  CurrentState = NextState;
+  
   return ReturnEvent;
 }
 
@@ -214,7 +293,8 @@ bool Check4MorseEvent(void)
       if (CurrentInputState == 0) 
       {
         ES_Event_t ThisEvent;
-        ThisEvent.EventType   = ES_RISING_EDGE;
+        ThisEvent.EventType  = ES_RISING_EDGE;
+        ThisEvent.EventParam  = ES_Timer_GetTime();
         ES_PostAll(ThisEvent);
         returnVal = true;
       }
@@ -222,6 +302,7 @@ bool Check4MorseEvent(void)
       {
         ES_Event_t ThisEvent;
         ThisEvent.EventType   = ES_FALLING_EDGE;
+        ThisEvent.EventParam  = ES_Timer_GetTime();
         ES_PostAll(ThisEvent);
         returnVal = true;
       }
@@ -230,6 +311,105 @@ bool Check4MorseEvent(void)
   
   return returnVal;
   }
+}
+
+void TestCalibration(void)
+{
+    uint8_t SecondDelta;
+    if (FirstDelta == 0){
+        FirstDelta = TimeOfLastRise - TimeOfLastFall;
+    }
+    else{
+        SecondDelta = FirstDelta = TimeOfLastRise - TimeOfLastFall;
+        if ((100.0 * FirstDelta / SecondDelta) <= 33.33){
+            LengthOfDot = FirstDelta;
+            ES_Event_t ThisEvent;
+            ThisEvent.EventType   = ES_CAL_COMPLETED;
+            ES_PostAll(ThisEvent);
+        }
+        else if ((100.0 * FirstDelta / SecondDelta) > 300.0){
+            LengthOfDot = SecondDelta;
+            ES_Event_t ThisEvent;
+            ThisEvent.EventType   = ES_CAL_COMPLETED;
+            ES_PostAll(ThisEvent);
+        }
+        else {
+            FirstDelta = SecondDelta;
+        }
+    }
+    return;
+}
+
+void CharacterizeSpace(void)
+{
+  uint8_t LastInterval;
+  ES_Event_t ThisEvent;
+  LastInterval = TimeOfLastRise - TimeOfLastFall;
+  bool Check4CharSpace = false;
+  bool Check4WordSpace = false;
+  
+  if ((LastInterval != LengthOfDot) || (LastInterval != LengthOfDot+1))
+  {
+      if (LastInterval == LengthOfDot*3){Check4CharSpace = true;}
+      else if (LastInterval == LengthOfDot*3 + 1){Check4CharSpace = true;}
+      else if (LastInterval == LengthOfDot*3 + 2){Check4CharSpace = true;}
+      else if (LastInterval == LengthOfDot*3 + 3){Check4CharSpace = true;}
+      
+      else if (LastInterval == LengthOfDot*7){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 1){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 2){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 3){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 4){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 5){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 6){Check4WordSpace = true;}
+      else if (LastInterval == LengthOfDot*7 + 7){Check4WordSpace = true;}
+      
+      if (Check4CharSpace){
+          ThisEvent.EventType   = ES_EOC_DETECTED;
+          ES_PostAll(ThisEvent);
+      }
+      else if (Check4WordSpace){
+          ThisEvent.EventType   = ES_EOW_DETECTED;
+          ES_PostAll(ThisEvent);
+      }
+      else{
+          ThisEvent.EventType   = ES_BAD_SPACE;
+          ES_PostAll(ThisEvent);
+      }
+      
+  }
+  return;
+
+}
+
+void CharacterizePulse(void)
+{
+  uint8_t LastPulseWidth;
+  ES_Event_t ThisEvent;
+  LastPulseWidth = TimeOfLastFall - TimeOfLastRise;
+  bool Check4Dash = false;
+  
+  if (LastPulseWidth == LengthOfDot*3){Check4Dash = true;}
+  else if (LastPulseWidth == LengthOfDot*3 + 1){Check4Dash = true;}
+  else if (LastPulseWidth == LengthOfDot*3 + 2){Check4Dash = true;}
+  else if (LastPulseWidth == LengthOfDot*3 + 3){Check4Dash = true;}
+  
+  if ((LastPulseWidth == LengthOfDot) || (LastPulseWidth == LengthOfDot+1))
+  {
+      ThisEvent.EventType   = ES_DOT_DETECTED;
+      ES_PostAll(ThisEvent);
+  }
+  else if (Check4Dash)
+  {
+      ThisEvent.EventType   = ES_DASH_DETECTED;
+      ES_PostAll(ThisEvent);
+  }
+  else
+  {
+      ThisEvent.EventType   = ES_BAD_PULSE;
+      ES_PostAll(ThisEvent);
+  }
+  return; 
 }
 
 /*------------------------------- Footnotes -------------------------------*/

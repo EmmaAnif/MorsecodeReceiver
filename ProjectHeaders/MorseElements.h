@@ -22,6 +22,9 @@ bool InitMorseElementsSM(uint8_t Priority);
 bool PostMorseElementsSM(ES_Event_t ThisEvent);
 ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent);
 bool Check4MorseEvent(void);
+void TestCalibration(void);
+void CharacterizeSpace(void);
+void CharacterizePulse(void);
 
-#endif /* ServTemplate_H */
+#endif /* MorseElements_H */
 

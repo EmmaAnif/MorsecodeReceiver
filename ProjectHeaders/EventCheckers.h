@@ -19,10 +19,12 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "MorseElements.h"
+#include "ButtonStatus.h"
 
 // prototypes for event checkers
 
 bool Check4Keystroke(void);
 bool Check4MorseEvent(void);
+bool Check4ButtonEvent(void);
 
 #endif /* EventCheckers_H */

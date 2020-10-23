@@ -33,7 +33,7 @@
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 2
+#define NUM_SERVICES 3
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -70,11 +70,11 @@
 // These are the definitions for Service 2
 #if NUM_SERVICES > 2
 // the header file with the public function prototypes
-#define SERV_2_HEADER "PrintOLEDService2.h"
+#define SERV_2_HEADER "MorseDecode.h"
 // the name of the Init function
-#define SERV_2_INIT InitPrintOLED
+#define SERV_2_INIT InitMorseDecode
 // the name of the run function
-#define SERV_2_RUN RunPrintOLED
+#define SERV_2_RUN RunMorseDecode
 // How big should this services Queue be?
 #define SERV_2_QUEUE_SIZE 3
 #endif
@@ -266,6 +266,7 @@ typedef enum
   ES_EOC_DETECTED,
   ES_EOW_DETECTED,
   ES_BUTTON_DOWN,
+  ES_BUTTON_UP,
   ES_BAD_SPACE,
   ES_DOT_DETECTED,
   ES_DASH_DETECTED,
@@ -304,7 +305,7 @@ typedef enum
 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST Check4Keystroke, Check4MorseEvent
+#define EVENT_CHECK_LIST Check4Keystroke, Check4MorseEvent, Check4ButtonEvent
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the

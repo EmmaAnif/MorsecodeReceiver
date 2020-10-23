@@ -100,7 +100,7 @@ bool InitTestHarnessService0(uint8_t Priority)
   /********************************************
    in here you write your initialization code
    *******************************************/
-  // initialize deferral queue for testing Deferal function
+  // initialize deferral queue for testing Deferral function
   ES_InitDeferralQueueWith(DeferralQueue, ARRAY_SIZE(DeferralQueue));
   // initialize LED drive for testing/debug output
   InitLED();

@@ -42,6 +42,8 @@
       <itemPath>ProjectHeaders/WriteOLEDService1.h</itemPath>
       <itemPath>ProjectHeaders/PrintOLEDService2.h</itemPath>
       <itemPath>ProjectHeaders/MorseElements.h</itemPath>
+      <itemPath>ProjectHeaders/MorseDecode.h</itemPath>
+      <itemPath>ProjectHeaders/ButtonStatus.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -58,6 +60,8 @@
       <itemPath>ProjectSource/WriteOLEDService1.c</itemPath>
       <itemPath>ProjectSource/PrintOLEDService2.c</itemPath>
       <itemPath>ProjectSource/MorseElements.c</itemPath>
+      <itemPath>ProjectSource/MorseDecode.c</itemPath>
+      <itemPath>ProjectSource/ButtonStatus.c</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="u8g2Headers" projectFiles="true">
       <itemPath>u8g2Headers/common.h</itemPath>
@@ -780,7 +784,7 @@
         <platformTool>snap</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.41</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>4</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MX_DFP" vendor="Microchip" version="1.3.231"/>

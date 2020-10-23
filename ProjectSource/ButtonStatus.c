@@ -12,8 +12,9 @@ static uint8_t LastButtonState;
 
 void InitButtonStatus (void)
 {
-    TRISBbits.TRISB5 = 1; //set RB5 to input
-    LastButtonState = PORTBbits.RB5; //read button status from RB4
+    
+    TRISAbits.TRISA3 = 1; //set RA3 to input
+    LastButtonState = PORTAbits.RA3; //read button status from RA3
 }
 
 bool Check4ButtonEvent(void)
@@ -21,21 +22,19 @@ bool Check4ButtonEvent(void)
   uint8_t CurrentButtonState;
   bool ReturnVal = false;
 
-  CurrentButtonState = LastButtonState = PORTBbits.RB5; //read button status from RB4
+  CurrentButtonState = PORTAbits.RA3; //read button status from RA3
+
   // check for pin high or low AND different from last time
   if (CurrentButtonState != LastButtonState) {
-      ReturnVal = true;
+      
+      printf("\r POST BUTTON_DOWN\r\n");
+      
       if (CurrentButtonState == 0) {
           ES_Event_t ThisEvent;
-          ThisEvent.EventType   = ES_BUTTON_DOWN;
+          ThisEvent.EventType = ES_BUTTON_DOWN;
           ThisEvent.EventParam  = 0;
           ES_PostAll(ThisEvent);
-      }
-      else {
-          ES_Event_t ThisEvent;
-          ThisEvent.EventType   = ES_BUTTON_UP;
-          ThisEvent.EventParam  = 1;
-          ES_PostAll(ThisEvent);
+          ReturnVal = true;
       }
   }
   LastButtonState = CurrentButtonState; // update the state for next time

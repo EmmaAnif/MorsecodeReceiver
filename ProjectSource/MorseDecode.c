@@ -119,6 +119,7 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
   
   switch (ThisEvent.EventType) {
       case ES_DOT_DETECTED: {
+          printf("\rES_DOT_DETECTED received in Service %d\r\n", MyPriority);
           if (MSIndex < MSlength) {
               MorseString[MSIndex] = '.';
               MSIndex++;
@@ -131,6 +132,7 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
       break;
       
       case ES_DASH_DETECTED: {
+          printf("\rES_DASH_DETECTED received in Service %d\r\n", MyPriority);
           if (MSIndex < MSlength) {
               MorseString[MSIndex] = '-';
               MSIndex++;
@@ -143,15 +145,18 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
       break;
       
       case ES_EOC_DETECTED: {
+          printf("\rES_EOC_DETECTED received in Service %d\r\n", MyPriority);
           //PrintToOLED(DecodeMorseString())
           printf("%c",DecodeMorseString());
           memreset(MorseString);
+          printf("\rCheck Memset %d\r\n", MyPriority);
           MSIndex = 0;
           
       }
       break;
       
       case ES_EOW_DETECTED: {
+          printf("\rES_EOW_DETECTED received in Service %d\r\n", MyPriority);
           //PrintToOLED(DecodeMorseString())
           //PrintToOLED(Space)
           printf("%c ",DecodeMorseString());
@@ -161,18 +166,21 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
       break;
       
       case ES_BAD_SPACE: {
+          printf("\rES_BAD_SPACE received in Service %d\r\n", MyPriority);
           memreset(MorseString);
           MSIndex = 0;
       }
       break;
       
       case ES_BAD_PULSE: {
+          printf("\rES_BAD_PULSE received in Service %d\r\n", MyPriority);
           memreset(MorseString);
           MSIndex = 0;
       }
       break;
       
       case ES_BUTTON_DOWN: {
+          printf("\rES_BUTTON_DOWN received in Service %d\r\n", MyPriority);
           memreset(MorseString);
           MSIndex = 0;
       }

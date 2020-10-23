@@ -35,10 +35,10 @@ static uint8_t MyPriority;
 
 static MorseElementState_t CurrentState;
 
-static uint8_t TimeOfLastRise;
-static uint8_t TimeOfLastFall;
-static uint8_t LengthOfDot;
-static uint8_t FirstDelta;
+static uint16_t TimeOfLastRise;
+static uint16_t TimeOfLastFall;
+static uint16_t LengthOfDot;
+static uint16_t FirstDelta;
 static uint8_t LastInputState;
 
 /*------------------------------ Module Code ------------------------------*/
@@ -175,7 +175,7 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
             NextState = CalWait4Rise;
             TestCalibration();
           }
-          break;
+      break;
             
       case EOC_WaitRise: 
           switch (ThisEvent.EventType)
@@ -216,6 +216,7 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
             break;
             case ES_EOC_DETECTED:  
             {
+              printf("\rGoing to Decode WaitFall\r\n");
               NextState = DecodeWaitFall;
             }
             break;
@@ -315,19 +316,23 @@ bool Check4MorseEvent(void)
 
 void TestCalibration(void)
 {
-    uint8_t SecondDelta;
+    uint16_t SecondDelta;
     if (FirstDelta == 0){
-        FirstDelta = TimeOfLastRise - TimeOfLastFall;
+        FirstDelta = TimeOfLastFall - TimeOfLastRise;
     }
     else{
-        SecondDelta = FirstDelta = TimeOfLastRise - TimeOfLastFall;
+        SecondDelta = TimeOfLastFall - TimeOfLastRise;
         if ((100.0 * FirstDelta / SecondDelta) <= 33.33){
+            printf("\rES_CAL_COMPLETED posted\r\n");
             LengthOfDot = FirstDelta;
+            printf("\rLength of Dot Cal First Delta Done %d\r\n",LengthOfDot);
             ES_Event_t ThisEvent;
             ThisEvent.EventType   = ES_CAL_COMPLETED;
             ES_PostAll(ThisEvent);
         }
         else if ((100.0 * FirstDelta / SecondDelta) > 300.0){
+            printf("\rES_CAL_COMPLETED posted\r\n");
+            printf("\rLength of Dot Cal Second Delta Done = %d\r\n",LengthOfDot);
             LengthOfDot = SecondDelta;
             ES_Event_t ThisEvent;
             ThisEvent.EventType   = ES_CAL_COMPLETED;
@@ -342,36 +347,26 @@ void TestCalibration(void)
 
 void CharacterizeSpace(void)
 {
-  uint8_t LastInterval;
+  uint16_t LastInterval;
   ES_Event_t ThisEvent;
   LastInterval = TimeOfLastRise - TimeOfLastFall;
-  bool Check4CharSpace = false;
-  bool Check4WordSpace = false;
+  printf("\r LAST_INTERVAL = %d\r\n",LastInterval);
+  printf("\rLength_of_Dot Space Check= %d\r\n",LengthOfDot);
   
-  if ((LastInterval != LengthOfDot) || (LastInterval != LengthOfDot+1))
+  if ((LastInterval != LengthOfDot) && (LastInterval != LengthOfDot+1))
   {
-      if (LastInterval == LengthOfDot*3){Check4CharSpace = true;}
-      else if (LastInterval == LengthOfDot*3 + 1){Check4CharSpace = true;}
-      else if (LastInterval == LengthOfDot*3 + 2){Check4CharSpace = true;}
-      else if (LastInterval == LengthOfDot*3 + 3){Check4CharSpace = true;}
-      
-      else if (LastInterval == LengthOfDot*7){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 1){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 2){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 3){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 4){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 5){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 6){Check4WordSpace = true;}
-      else if (LastInterval == LengthOfDot*7 + 7){Check4WordSpace = true;}
-      
-      if (Check4CharSpace){
+      if ((LastInterval >= LengthOfDot*3) && (LastInterval <= LengthOfDot*3 + 3))
+      {
           ThisEvent.EventType   = ES_EOC_DETECTED;
           ES_PostAll(ThisEvent);
       }
-      else if (Check4WordSpace){
+      
+      else if ((LastInterval >= LengthOfDot*7) && (LastInterval <= LengthOfDot*7 + 7))
+      {
           ThisEvent.EventType   = ES_EOW_DETECTED;
           ES_PostAll(ThisEvent);
       }
+      
       else{
           ThisEvent.EventType   = ES_BAD_SPACE;
           ES_PostAll(ThisEvent);
@@ -379,27 +374,22 @@ void CharacterizeSpace(void)
       
   }
   return;
-
 }
 
 void CharacterizePulse(void)
 {
-  uint8_t LastPulseWidth;
+  uint16_t LastPulseWidth;
   ES_Event_t ThisEvent;
   LastPulseWidth = TimeOfLastFall - TimeOfLastRise;
-  bool Check4Dash = false;
-  
-  if (LastPulseWidth == LengthOfDot*3){Check4Dash = true;}
-  else if (LastPulseWidth == LengthOfDot*3 + 1){Check4Dash = true;}
-  else if (LastPulseWidth == LengthOfDot*3 + 2){Check4Dash = true;}
-  else if (LastPulseWidth == LengthOfDot*3 + 3){Check4Dash = true;}
-  
+  printf("\r LAST_PULSE_WIDTH = %d\r\n",LastPulseWidth);
+  printf("\rLength_of_Dot Pulse Check= %d\r\n",LengthOfDot);
+
   if ((LastPulseWidth == LengthOfDot) || (LastPulseWidth == LengthOfDot+1))
   {
       ThisEvent.EventType   = ES_DOT_DETECTED;
       ES_PostAll(ThisEvent);
   }
-  else if (Check4Dash)
+  else if ((LastPulseWidth >= LengthOfDot*3) && (LastPulseWidth <= LengthOfDot*3 + 3))
   {
       ThisEvent.EventType   = ES_DASH_DETECTED;
       ES_PostAll(ThisEvent);

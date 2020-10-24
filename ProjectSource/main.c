@@ -31,7 +31,8 @@ void main(void)
 
   // When doing testing, it is useful to announce just which program
   // is running.
-  puts("\rStarting Morse Code Service \r");
+  puts("\rStarting Test Harness for \r");
+  printf( "the 2nd Generation Events & Services Framework V2.4\r\n");
   printf( "%s %s\n", __TIME__, __DATE__);
   printf( "\n\r\n");
   printf( "Press any key to post key-stroke events to Service 0\n\r");

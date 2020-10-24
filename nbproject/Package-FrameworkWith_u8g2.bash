@@ -10,9 +10,9 @@ CND_CONF=FrameworkWith_u8g2
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/lab4.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=lab4.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=lab4/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Framework4PIC32_with_u8g2.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=Framework4PIC32_with_u8g2.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=framework4pic32withu8g2/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/lab4/bin
+makeDirectory ${TMPDIR}/framework4pic32withu8g2/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/lab4.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/framework4pic32withu8g2.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/lab4.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/framework4pic32withu8g2.tar *
 checkReturnCode
 
 # Cleanup

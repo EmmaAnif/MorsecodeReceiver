@@ -33,7 +33,7 @@
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 3
+#define NUM_SERVICES 1
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -57,11 +57,11 @@
 // These are the definitions for Service 1
 #if NUM_SERVICES > 1
 // the header file with the public function prototypes
-#define SERV_1_HEADER "MorseElements.h"
+#define SERV_1_HEADER "TestHarnessService1.h"
 // the name of the Init function
-#define SERV_1_INIT InitMorseElementsSM
+#define SERV_1_INIT InitTestHarnessService1
 // the name of the run function
-#define SERV_1_RUN RunMorseElementsSM
+#define SERV_1_RUN RunTestHarnessService1
 // How big should this services Queue be?
 #define SERV_1_QUEUE_SIZE 3
 #endif
@@ -70,11 +70,11 @@
 // These are the definitions for Service 2
 #if NUM_SERVICES > 2
 // the header file with the public function prototypes
-#define SERV_2_HEADER "MorseDecode.h"
+#define SERV_2_HEADER "TestHarnessService2.h"
 // the name of the Init function
-#define SERV_2_INIT InitMorseDecode
+#define SERV_2_INIT InitTestHarnessService2
 // the name of the run function
-#define SERV_2_RUN RunMorseDecode
+#define SERV_2_RUN RunTestHarnessService2
 // How big should this services Queue be?
 #define SERV_2_QUEUE_SIZE 3
 #endif
@@ -260,17 +260,8 @@ typedef enum
   ES_SHORT_TIMEOUT,         /* signals that a short timer has expired */
   /* User-defined events start here */
   ES_NEW_KEY,               /* signals a new key received from terminal */
-  ES_RISING_EDGE,
-  ES_FALLING_EDGE,
-  ES_CAL_COMPLETED,
-  ES_EOC_DETECTED,
-  ES_EOW_DETECTED,
-  ES_BUTTON_DOWN,
-  ES_BUTTON_UP,
-  ES_BAD_SPACE,
-  ES_DOT_DETECTED,
-  ES_DASH_DETECTED,
-  ES_BAD_PULSE
+  ES_LOCK,
+  ES_UNLOCK
 }ES_EventType_t;
 
 /****************************************************************************/
@@ -305,7 +296,7 @@ typedef enum
 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST Check4Keystroke, Check4MorseEvent, Check4ButtonEvent
+#define EVENT_CHECK_LIST Check4Keystroke
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
@@ -339,5 +330,6 @@ typedef enum
 // These symbolic names should be changed to be relevant to your application
 
 #define SERVICE0_TIMER 15
+
 
 #endif /* ES_CONFIGURE_H */

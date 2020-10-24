@@ -24,10 +24,10 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=lab4
+PROJECTNAME=Framework4PIC32_with_u8g2
 
 # Active Configuration
-DEFAULTCONF=FrameworkWith_u8g2
+DEFAULTCONF=Justu8g2POC
 CONF=${DEFAULTCONF}
 
 # All Configurations

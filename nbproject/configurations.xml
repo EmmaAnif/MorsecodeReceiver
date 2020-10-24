@@ -39,6 +39,11 @@
       <itemPath>ProjectHeaders/EventCheckWrapper.h</itemPath>
       <itemPath>ProjectHeaders/TestHarnessService0.h</itemPath>
       <itemPath>ProjectHeaders/dbprintf.h</itemPath>
+      <itemPath>ProjectHeaders/WriteOLEDService1.h</itemPath>
+      <itemPath>ProjectHeaders/PrintOLEDService2.h</itemPath>
+      <itemPath>ProjectHeaders/MorseElements.h</itemPath>
+      <itemPath>ProjectHeaders/MorseDecode.h</itemPath>
+      <itemPath>ProjectHeaders/ButtonStatus.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -52,6 +57,11 @@
       <itemPath>ProjectSource/TestHarnessService0.c</itemPath>
       <itemPath>ProjectSource/dbprintf.c</itemPath>
       <itemPath>u8g2/u8g2_TestHarness_main.c</itemPath>
+      <itemPath>ProjectSource/WriteOLEDService1.c</itemPath>
+      <itemPath>ProjectSource/PrintOLEDService2.c</itemPath>
+      <itemPath>ProjectSource/MorseElements.c</itemPath>
+      <itemPath>ProjectSource/MorseDecode.c</itemPath>
+      <itemPath>ProjectSource/ButtonStatus.c</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="u8g2Headers" projectFiles="true">
       <itemPath>u8g2Headers/common.h</itemPath>
@@ -293,7 +303,7 @@
         <property key="wpo-lto" value="false"/>
         <appendMe value="-std=gnu99"/>
       </C32Global>
-      <item path="FrameworkSource/ES_CheckEvents.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_CheckEvents.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -309,7 +319,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_DeferRecall.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_DeferRecall.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -325,7 +335,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_Framework.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_Framework.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -341,7 +351,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_LookupTables.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_LookupTables.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -357,7 +367,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_Port.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_Port.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -373,7 +383,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_PostList.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_PostList.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -389,7 +399,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_Queue.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_Queue.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -405,7 +415,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/ES_Timers.c" ex="true" overriding="false">
+      <item path="FrameworkSource/ES_Timers.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -421,7 +431,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="FrameworkSource/terminal.c" ex="true" overriding="false">
+      <item path="FrameworkSource/terminal.c" ex="false" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -479,6 +489,102 @@
         <property key="programoptions.uselvpprogramming" value="false"/>
         <property key="voltagevalue" value="5.0"/>
       </PICkit3PlatformTool>
+      <item path="ProjectHeaders/EventCheckWrapper.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectHeaders/EventCheckers.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectHeaders/PrintOLEDService2.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectHeaders/TestHarnessService0.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectHeaders/WriteOLEDService1.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectHeaders/dbprintf.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
       <item path="ProjectSource/EventCheckers.c" ex="true" overriding="false">
         <C32>
         </C32>
@@ -495,7 +601,39 @@
         <C32Global>
         </C32Global>
       </item>
+      <item path="ProjectSource/PrintOLEDService2.c" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
       <item path="ProjectSource/TestHarnessService0.c" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectSource/WriteOLEDService1.c" ex="true" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -600,6 +738,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d03ffff"/>
+        <property key="programmerToGoFilePath"
+                  value="U:/anifs/lab4_station7/debug/Justu8g2POC/Justu8g2POC_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -620,6 +760,22 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
       </snap>
+      <item path="u8g2/u8g2_TestHarness_main.c" ex="false" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
     </conf>
     <conf name="FrameworkWith_u8g2" type="2">
       <toolsSet>
@@ -796,6 +952,70 @@
         <property key="wpo-lto" value="false"/>
         <appendMe value="-std=gnu99"/>
       </C32Global>
+      <item path="ProjectHeaders/PrintOLEDService2.h" ex="false" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectHeaders/WriteOLEDService1.h" ex="false" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectSource/PrintOLEDService2.c" ex="false" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
+      <item path="ProjectSource/WriteOLEDService1.c" ex="false" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
       <snap>
         <property key="ADC 1" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -852,6 +1072,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d03ffff"/>
+        <property key="programmerToGoFilePath"
+                  value="U:/anifs/lab4_station7/debug/FrameworkWith_u8g2/FrameworkWith_u8g2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

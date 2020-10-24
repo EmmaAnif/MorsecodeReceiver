@@ -37,7 +37,7 @@
 // are defined in ES_Port.c
 #include "ES_Port.h"
 // include our own prototypes to insure consistency between header &
-// actual functionsdefinition
+// actual functions definition
 #include "EventCheckers.h"
 
 // This is the event checking function sample. It is not intended to be
@@ -118,4 +118,3 @@ bool Check4Keystroke(void)
   }
   return false;
 }
-

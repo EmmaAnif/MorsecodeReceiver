@@ -100,7 +100,7 @@ bool InitTestHarnessService0(uint8_t Priority)
   /********************************************
    in here you write your initialization code
    *******************************************/
-  // initialize deferral queue for testing Deferal function
+  // initialize deferral queue for testing Deferral function
   ES_InitDeferralQueueWith(DeferralQueue, ARRAY_SIZE(DeferralQueue));
   // initialize LED drive for testing/debug output
   InitLED();
@@ -175,34 +175,34 @@ ES_Event_t RunTestHarnessService0(ES_Event_t ThisEvent)
     case ES_INIT:
     {
       ES_Timer_InitTimer(SERVICE0_TIMER, HALF_SEC);
-      puts("Service 00:");
-      printf("\rES_INIT received in Service %d\r\n", MyPriority);
+      //puts("Service 00:");
+      //printf("\rES_INIT received in Service %d\r\n", MyPriority);
     }
     break;
     case ES_TIMEOUT:   // re-start timer & announce
     {
-      ES_Timer_InitTimer(SERVICE0_TIMER, FIVE_SEC);
-      printf("ES_TIMEOUT received from Timer %d in Service %d\r\n",
-          ThisEvent.EventParam, MyPriority);
-      StartTMR2();
-      BlinkLED();
+      //ES_Timer_InitTimer(SERVICE0_TIMER, FIVE_SEC);
+     // printf("ES_TIMEOUT received from Timer %d in Service %d\r\n",
+       //   ThisEvent.EventParam, MyPriority);
+      //StartTMR2();
+      //BlinkLED();
     }
     break;
     case ES_SHORT_TIMEOUT:   // lower the line & announce
     {
-      puts("\rES_SHORT_TIMEOUT received\r\n");
+      //puts("\rES_SHORT_TIMEOUT received\r\n");
     }
     break;
     case ES_NEW_KEY:   // announce
     {
-      printf("ES_NEW_KEY received with -> %c <- in Service 0\r\n",
-          (char)ThisEvent.EventParam);
-      if ('d' == ThisEvent.EventParam)
+      //printf("ES_NEW_KEY received with -> %c <- in Service 0\r\n",
+          //(char)ThisEvent.EventParam);
+      //if ('d' == ThisEvent.EventParam)
       {
         ThisEvent.EventParam = DeferredChar++;   //
         if (ES_DeferEvent(DeferralQueue, ThisEvent))
         {
-          puts("ES_NEW_KEY deferred in Service 0\r");
+          //puts("ES_NEW_KEY deferred in Service 0\r");
         }
       }
       if ('r' == ThisEvent.EventParam)
@@ -212,7 +212,7 @@ ES_Event_t RunTestHarnessService0(ES_Event_t ThisEvent)
         // but we slide the deferred events under it so it(they) should come out first
         if (true == ES_RecallEvents(MyPriority, DeferralQueue))
         {
-          puts("ES_NEW_KEY(s) recalled in Service 0\r");
+          //puts("ES_NEW_KEY(s) recalled in Service 0\r");
           DeferredChar = '1';
         }
       }

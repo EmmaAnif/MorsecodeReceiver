@@ -18,9 +18,14 @@
 // the common headers for C99 types
 #include <stdint.h>
 #include <stdbool.h>
+#include "MorseElements.h"
+#include "ButtonStatus.h"
 
 // prototypes for event checkers
 
 bool Check4Keystroke(void);
+bool Check4MorseEvent(void);
+bool Check4ButtonEvent(void);
+bool Check4NextPage(void);
 
 #endif /* EventCheckers_H */

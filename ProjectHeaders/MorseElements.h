@@ -21,6 +21,7 @@ typedef enum
 bool InitMorseElementsSM(uint8_t Priority);
 bool PostMorseElementsSM(ES_Event_t ThisEvent);
 ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent);
+MorseElementState_t QueryMorseElements(void);
 bool Check4MorseEvent(void);
 void TestCalibration(void);
 void CharacterizeSpace(void);

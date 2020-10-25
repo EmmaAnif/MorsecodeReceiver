@@ -52,8 +52,8 @@ static u8g2_t u8g2;
 
 static uint16_t offset=118; // start at the rightmost character position
 static uint16_t width;
-char PrintChar;
-
+char PrintChar[1000];
+static uint16_t char_ind = 0;
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;
 static uint8_t LastNextPageState;
@@ -168,7 +168,7 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
             // overwrite the background color of newly written characters
             u8g2_SetFontMode(&u8g2, 0);
             // width is used only for the scrolling demo
-            width = (u8g2_GetStrWidth(&u8g2, &PrintChar)/2);
+            width = (u8g2_GetStrWidth(&u8g2, PrintChar)/2);
             // this is where you would put any actions associated with the
             // transition from the initial pseudo-state into the actual
             // initial state
@@ -185,23 +185,37 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
       {
         case ES_OLED_CHAR:  //
         {   // 
-            PrintChar = ThisEvent.EventParam;
-            printf("ES_OLED_CHAR received in WriteOLED\n");
+            PrintChar[char_ind] = ThisEvent.EventParam;
+            char_ind++;
             u8g2_FirstPage(&u8g2);
-            u8g2_DrawStr(&u8g2, offset, 37, &PrintChar);
+            u8g2_DrawStr(&u8g2, offset, 37, PrintChar);
             LastNextPageState = 1;
             CurrentState = Writing;  //Decide what the next state will be
         }
         break;
         case ES_NEW_KEY:  //
         {   // 
-            PrintChar = ThisEvent.EventParam;
-            printf("ES_NEW_KEY received in WriteOLED\n");
+            PrintChar[char_ind] = ThisEvent.EventParam;
+            char_ind++;
             u8g2_FirstPage(&u8g2);
-            u8g2_DrawStr(&u8g2, offset, 37, &PrintChar);
+            u8g2_DrawStr(&u8g2, offset, 37, PrintChar);
             LastNextPageState = 1;
             CurrentState = Writing;  //Decide what the next state will be
         }
+        break;
+        case ES_BUTTON_DOWN:  //
+        {   // 
+            offset = 118;
+            str_reset(PrintChar);
+            char_ind = 0;
+            PrintChar[char_ind] = ' ';
+            char_ind++;
+            u8g2_FirstPage(&u8g2);
+            u8g2_DrawStr(&u8g2, offset, 37, PrintChar);
+            LastNextPageState = 1;
+            CurrentState = Writing;  //Decide what the next state will be
+        }
+        break;
         break;
       }  // end switch on CurrentEvent
     }
@@ -228,7 +242,6 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {   //
             ES_DeferEvent(DeferralQueue, ThisEvent);
         }
-        break;
       }  // end switch on CurrentEvent
     }
     break;
@@ -284,4 +297,13 @@ bool Check4NextPage(void)
   
   } 
   return returnVal;
+}
+
+void str_reset(char arr[]) 
+{
+    for(uint16_t i = 0; i < 1000; i++) //iterate over each element
+    {
+        arr[i] = '\0'; //reset with null character
+    }
+    return;
 }

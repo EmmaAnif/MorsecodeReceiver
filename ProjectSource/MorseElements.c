@@ -21,6 +21,7 @@
 #include "MorseElements.h"
 #include "ES_DeferRecall.h"
 #include "ButtonStatus.h"
+#include "MorseDecode.h"
 
 /*----------------------------- Module Defines ----------------------------*/
 
@@ -71,8 +72,8 @@ bool InitMorseElementsSM(uint8_t Priority)
   ANSELA = 0;
   ANSELB = 0;
   TRISBbits.TRISB4 = 1; //set RB4 to input
-  //TRISBbits.TRISB5 = 0; //set RB5 as debugging pin
-  //LATBbits.LATB5 = 0;
+  TRISBbits.TRISB5 = 0; //set RB5 as debugging pin
+  LATBbits.LATB5 = 0;
   LastInputState = PORTBbits.RB4; //read from RB4
   FirstDelta = 0;
   InitButtonStatus();
@@ -156,14 +157,14 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
           {
               case ES_RISING_EDGE:   // announce rise event
               {
-                  //LATBbits.LATB5 = 1;
+                  LATBbits.LATB5 = 1;
                   TimeOfLastRise = ThisEvent.EventParam;
                   NextState = CalWait4Fall;
               }
               break;
               case ES_CAL_COMPLETED: 
               {
-                  //LATBbits.LATB5 = 1;
+                  LATBbits.LATB5 = 1;
                   NextState = EOC_WaitRise;
               }
               break;
@@ -176,7 +177,7 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       case CalWait4Fall: 
           if (ThisEvent.EventType == ES_FALLING_EDGE)
           {
-            //LATBbits.LATB5 = 0;
+            LATBbits.LATB5 = 0;
             TimeOfLastFall = ThisEvent.EventParam;
             NextState = CalWait4Rise;
             TestCalibration();
@@ -288,6 +289,12 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
   return ReturnEvent;
 }
 
+MorseElementState_t QueryMorseElements(void)
+{
+  return CurrentState;
+}
+
+
 /***************************************************************************
  private functions
  ***************************************************************************/
@@ -359,16 +366,28 @@ void CharacterizeSpace(void)
       if ((LastInterval >= LengthOfDot*3) && (LastInterval <= LengthOfDot*3 + 3))
       {
           ThisEvent.EventType = ES_EOC_DETECTED;
-          ES_PostAll(ThisEvent);
+          PostMorseDecode(ThisEvent);
+          if (QueryMorseElements() == EOC_WaitFall)
+          {
+            PostMorseElementsSM(ThisEvent);
+          }
       }
       else if ((LastInterval >= LengthOfDot*7) && (LastInterval <= LengthOfDot*7 + 7))
       {
           ThisEvent.EventType = ES_EOW_DETECTED;
-          ES_PostAll(ThisEvent);
+          PostMorseDecode(ThisEvent);
+          //if (CurrentState == EOC_WaitFall)
+          //{
+            PostMorseElementsSM(ThisEvent);
+          //}
       }
       else{
           ThisEvent.EventType = ES_BAD_SPACE;
-          ES_PostAll(ThisEvent);
+          PostMorseDecode(ThisEvent);
+          if (CurrentState == EOC_WaitFall)
+          {
+            PostMorseElementsSM(ThisEvent);
+          }
       }
   }
   return;
@@ -383,17 +402,17 @@ void CharacterizePulse(void)
   if ((LastPulseWidth == LengthOfDot) || (LastPulseWidth == LengthOfDot+1))
   {
       ThisEvent.EventType   = ES_DOT_DETECTED;
-      ES_PostAll(ThisEvent);
+      PostMorseDecode(ThisEvent);
   }
   else if ((LastPulseWidth >= LengthOfDot*3) && (LastPulseWidth <= LengthOfDot*3 + 3))
   {
       ThisEvent.EventType   = ES_DASH_DETECTED;
-      ES_PostAll(ThisEvent);
+      PostMorseDecode(ThisEvent);
   }
   else
   {
       ThisEvent.EventType   = ES_BAD_PULSE;
-      ES_PostAll(ThisEvent);
+      PostMorseDecode(ThisEvent);
   }
   return; 
 }

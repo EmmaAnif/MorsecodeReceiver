@@ -739,7 +739,7 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d03ffff"/>
         <property key="programmerToGoFilePath"
-                  value="U:/anifs/lab4_station7/debug/Justu8g2POC/Justu8g2POC_ptg"/>
+                  value="U:/anifs/lab4_station11/debug/Justu8g2POC/Justu8g2POC_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -968,6 +968,8 @@
         <C32Global>
         </C32Global>
       </item>
+      <item path="ProjectHeaders/TestHarnessService0.h" ex="true" overriding="false">
+      </item>
       <item path="ProjectHeaders/WriteOLEDService1.h" ex="false" overriding="false">
         <C32>
         </C32>
@@ -999,6 +1001,8 @@
         </C32CPP>
         <C32Global>
         </C32Global>
+      </item>
+      <item path="ProjectSource/TestHarnessService0.c" ex="true" overriding="false">
       </item>
       <item path="ProjectSource/WriteOLEDService1.c" ex="false" overriding="false">
         <C32>
@@ -1073,7 +1077,7 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d03ffff"/>
         <property key="programmerToGoFilePath"
-                  value="U:/anifs/lab4_station7/debug/FrameworkWith_u8g2/FrameworkWith_u8g2_ptg"/>
+                  value="U:/anifs/lab4_station11/debug/FrameworkWith_u8g2/FrameworkWith_u8g2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

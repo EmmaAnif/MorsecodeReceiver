@@ -150,10 +150,10 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
           memreset(MorseString);
           MSIndex = 0;
           
-          ES_Event_t CHAREvent;
-          CHAREvent.EventType = ES_OLED_CHAR;
-          CHAREvent.EventParam = MorseChar;
-          PostWriteOLED(CHAREvent);
+//          ES_Event_t CHAREvent;
+//          CHAREvent.EventType = ES_OLED_CHAR;
+//          CHAREvent.EventParam = MorseChar;
+//          PostWriteOLED(CHAREvent);
           
           
       }
@@ -165,11 +165,11 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
           memreset(MorseString);
           MSIndex = 0;
           
-          ES_Event_t CHAREvent;
-          CHAREvent.EventType = ES_OLED_CHAR;
-          CHAREvent.EventParam = MorseChar;
-          PostWriteOLED(CHAREvent);
-          
+//          ES_Event_t CHAREvent;
+//          CHAREvent.EventType = ES_OLED_CHAR;
+//          CHAREvent.EventParam = MorseChar;
+//          PostWriteOLED(CHAREvent);
+//          
 //          ES_Event_t SPACEEvent;
 //          SPACEEvent.EventType = ES_OLED_CHAR;
 //          SPACEEvent.EventParam = ' ';
@@ -179,12 +179,14 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
       break;
       
       case ES_BAD_SPACE: {
+          printf("BS\n");
           memreset(MorseString);
           MSIndex = 0;
       }
       break;
       
       case ES_BAD_PULSE: {
+          printf("BP\n");
           memreset(MorseString);
           MSIndex = 0;
       }

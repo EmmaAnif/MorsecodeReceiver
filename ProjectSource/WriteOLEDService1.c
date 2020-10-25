@@ -52,7 +52,7 @@ static u8g2_t u8g2;
 
 static uint16_t offset=118; // start at the rightmost character position
 static uint16_t width;
-char charBuffer[] = "E";
+char PrintChar;
 
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;
@@ -145,7 +145,6 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
 {
   ES_Event_t ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
-  static char DeferredChar = '1';
 
   switch (CurrentState)
   {
@@ -169,7 +168,7 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
             // overwrite the background color of newly written characters
             u8g2_SetFontMode(&u8g2, 0);
             // width is used only for the scrolling demo
-            width = (u8g2_GetStrWidth(&u8g2, charBuffer)/2);
+            width = (u8g2_GetStrWidth(&u8g2, &PrintChar)/2);
             // this is where you would put any actions associated with the
             // transition from the initial pseudo-state into the actual
             // initial state
@@ -186,8 +185,18 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
       {
         case ES_OLED_CHAR:  //
         {   // 
-            char PrintChar = ThisEvent.EventParam;
+            PrintChar = ThisEvent.EventParam;
             printf("ES_OLED_CHAR received in WriteOLED\n");
+            u8g2_FirstPage(&u8g2);
+            u8g2_DrawStr(&u8g2, offset, 37, &PrintChar);
+            LastNextPageState = 1;
+            CurrentState = Writing;  //Decide what the next state will be
+        }
+        break;
+        case ES_NEW_KEY:  //
+        {   // 
+            PrintChar = ThisEvent.EventParam;
+            printf("ES_NEW_KEY received in WriteOLED\n");
             u8g2_FirstPage(&u8g2);
             u8g2_DrawStr(&u8g2, offset, 37, &PrintChar);
             LastNextPageState = 1;
@@ -206,16 +215,17 @@ ES_Event_t RunWriteOLED(ES_Event_t ThisEvent)
         {   // Execute action function for state one : event one
             offset -= 9; 
             if(offset < -width) offset = 0; // reset and start over
-            if (true == ES_RecallEvents(MyPriority, DeferralQueue))
-            {
-                DeferredChar = '1';
-            }
             CurrentState = NotWriting;  //Decide what the next state will be
+            ES_RecallEvents(MyPriority, DeferralQueue);
         }
         break;
         case ES_OLED_CHAR:  //
-        {   // 
-            ThisEvent.EventParam = DeferredChar++;   //
+        {   //
+            ES_DeferEvent(DeferralQueue, ThisEvent);
+        }
+        break;
+        case ES_NEW_KEY:  //
+        {   //
             ES_DeferEvent(DeferralQueue, ThisEvent);
         }
         break;
@@ -255,21 +265,23 @@ WriteOLEDState_t QueryWriteOLED(void)
 
 bool Check4NextPage(void)
 {
-  uint8_t CurrentNextPageState;
-  bool returnVal;
+  bool returnVal = false;
   
-  CurrentNextPageState = u8g2_NextPage(&u8g2);
-  
-  if ((CurrentNextPageState != LastNextPageState) && (CurrentNextPageState == 0))  // 
-  {
-    ES_Event_t ThisEvent;
-    ThisEvent.EventType   = ES_NEXT_PAGE;
-    PostWriteOLED(ThisEvent);
-    
-    returnVal = true;
-  }
-  returnVal = false;
+  if (QueryWriteOLED() == Writing){
+      
+      uint8_t CurrentNextPageState;
+      CurrentNextPageState = u8g2_NextPage(&u8g2);
+
+      if ((CurrentNextPageState != LastNextPageState) && (CurrentNextPageState == 0))  // 
+      {
+        ES_Event_t ThisEvent;
+        ThisEvent.EventType   = ES_NEXT_PAGE;
+        PostWriteOLED(ThisEvent);
+
+        returnVal = true;
+      }
   LastNextPageState = CurrentNextPageState;
   
+  } 
   return returnVal;
 }

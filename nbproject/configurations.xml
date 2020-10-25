@@ -952,7 +952,7 @@
         <property key="wpo-lto" value="false"/>
         <appendMe value="-std=gnu99"/>
       </C32Global>
-      <item path="ProjectHeaders/PrintOLEDService2.h" ex="false" overriding="false">
+      <item path="ProjectHeaders/PrintOLEDService2.h" ex="true" overriding="false">
         <C32>
         </C32>
         <C32-AR>
@@ -984,7 +984,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="ProjectSource/PrintOLEDService2.c" ex="false" overriding="false">
+      <item path="ProjectSource/PrintOLEDService2.c" ex="true" overriding="false">
         <C32>
         </C32>
         <C32-AR>

@@ -33,7 +33,7 @@
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 5
+#define NUM_SERVICES 4
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -331,7 +331,8 @@ Check4NextPage
 #define TIMER11_RESP_FUNC TIMER_UNUSED
 #define TIMER12_RESP_FUNC TIMER_UNUSED
 #define TIMER13_RESP_FUNC TIMER_UNUSED
-#define TIMER14_RESP_FUNC PostPrintOLED
+#define TIMER14_RESP_FUNC TIMER_UNUSED
+//#define TIMER14_RESP_FUNC PostPrintOLED
 #define TIMER15_RESP_FUNC PostTestHarnessService0
 
 /****************************************************************************/
@@ -342,6 +343,6 @@ Check4NextPage
 // These symbolic names should be changed to be relevant to your application
 
 #define SERVICE0_TIMER 15
-#define CHAR_TIMER 15
+//#define CHAR_TIMER 15
 
 #endif /* ES_CONFIGURE_H */

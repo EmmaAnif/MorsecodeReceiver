@@ -48,7 +48,7 @@ void SPI_Init(void){
     //set BRG register using bit rate
     uint32_t bitRate = 1e6; //1MHz
     uint32_t PbClk = 20e6; //pic32 clock rate in Hz
-    SPI1BRG = (PbClk/(bitRate*2))-1;
+    SPI1BRG = 0;
 
     //clear the SPIROV bit
     SPI1STATbits.SPIROV = 0;

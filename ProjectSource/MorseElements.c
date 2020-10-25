@@ -40,6 +40,7 @@ static uint16_t TimeOfLastFall;
 static uint16_t LengthOfDot;
 static uint16_t FirstDelta;
 static uint8_t LastInputState;
+static uint8_t DebugOutput;
 
 /*------------------------------ Module Code ------------------------------*/
 /****************************************************************************
@@ -70,6 +71,8 @@ bool InitMorseElementsSM(uint8_t Priority)
   ANSELA = 0;
   ANSELB = 0;
   TRISBbits.TRISB4 = 1; //set RB4 to input
+  //TRISBbits.TRISB5 = 0; //set RB5 as debugging pin
+  //LATBbits.LATB5 = 0;
   LastInputState = PORTBbits.RB4; //read from RB4
   FirstDelta = 0;
   InitButtonStatus();
@@ -153,13 +156,14 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
           {
               case ES_RISING_EDGE:   // announce rise event
               {
-                  printf("%c",'*');
+                  //LATBbits.LATB5 = 1;
                   TimeOfLastRise = ThisEvent.EventParam;
                   NextState = CalWait4Fall;
               }
               break;
               case ES_CAL_COMPLETED: 
               {
+                  //LATBbits.LATB5 = 1;
                   NextState = EOC_WaitRise;
               }
               break;
@@ -172,6 +176,7 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       case CalWait4Fall: 
           if (ThisEvent.EventType == ES_FALLING_EDGE)
           {
+            //LATBbits.LATB5 = 0;
             TimeOfLastFall = ThisEvent.EventParam;
             NextState = CalWait4Rise;
             TestCalibration();

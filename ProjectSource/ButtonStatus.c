@@ -12,7 +12,6 @@ static uint8_t LastButtonState;
 
 void InitButtonStatus (void)
 {
-    
     TRISAbits.TRISA3 = 1; //set RA3 to input
     LastButtonState = PORTAbits.RA3; //read button status from RA3
 }
@@ -27,7 +26,6 @@ bool Check4ButtonEvent(void)
   // check for pin high or low AND different from last time
   if (CurrentButtonState != LastButtonState) {
       if (CurrentButtonState == 0) {
-          printf("\n");
           ES_Event_t ThisEvent;
           ThisEvent.EventType = ES_BUTTON_DOWN;
           ThisEvent.EventParam  = 0;

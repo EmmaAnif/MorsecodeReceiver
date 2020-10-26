@@ -16,7 +16,6 @@ bool InitMorseDecode(uint8_t Priority);
 bool PostMorseDecode(ES_Event_t ThisEvent);
 ES_Event_t RunMorseDecode(ES_Event_t ThisEvent);
 char DecodeMorseString(void);
-void memreset(char *arr) ;
 
 #endif /* MorseDecode_H */
 

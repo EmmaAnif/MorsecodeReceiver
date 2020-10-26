@@ -22,6 +22,7 @@
 #include "ES_DeferRecall.h"
 #include "ButtonStatus.h"
 #include "MorseDecode.h"
+#include "HAL.h" 
 
 /*----------------------------- Module Defines ----------------------------*/
 
@@ -34,14 +35,13 @@
 // with the introduction of Gen2, we need a module level Priority variable
 static uint8_t MyPriority;
 
-static MorseElementState_t CurrentState;
+static MorseElementState_t CurrentState; //store current state of this machine
 
-static uint16_t TimeOfLastRise;
-static uint16_t TimeOfLastFall;
-static uint16_t LengthOfDot;
-static uint16_t FirstDelta;
-static uint8_t LastInputState;
-static uint8_t DebugOutput;
+static uint16_t TimeOfLastRise; //time of rising edge
+static uint16_t TimeOfLastFall; //time of falling edge
+static uint16_t LengthOfDot; //store length of Dot
+static uint16_t FirstDelta; //used in calibrating the Morse Code signal
+static uint8_t LastInputState; //store last state of data input pin
 
 /*------------------------------ Module Code ------------------------------*/
 /****************************************************************************
@@ -66,23 +66,15 @@ bool InitMorseElementsSM(uint8_t Priority)
 {
   ES_Event_t ThisEvent;
 
-  MyPriority = Priority;
-  CurrentState = InitMorseElements;
+  MyPriority = Priority; //initialize priority of this service
+  CurrentState = InitMorseElements; //initialize current state as InitMorseElements
   //disable analog function on all pins
   ANSELA = 0;
   ANSELB = 0;
-  TRISBbits.TRISB4 = 1; //set RB4 to input
-  TRISBbits.TRISB5 = 0; //set RB5 as debugging pin
-  LATBbits.LATB5 = 0;
-  LastInputState = PORTBbits.RB4; //read from RB4
-  FirstDelta = 0;
-  InitButtonStatus();
-  /********************************************
-   Initialize the port line to receive Morse Code
-   Sample port line and use it to initialize LastInputState
-   Set FirstDelta to 0
-   Call InitButtonStatus to initialize local var in button checking module
-   *******************************************/
+  pinMode(10,1); //set RB4 as data input
+  LastInputState = digitalRead(10); //read from RB4 and use it to initialize LastInputState
+  FirstDelta = 0; //initialize first delta as 0 
+  InitButtonStatus(); //initialize the ButtonStatus module
   
   // post the initial transition event
   ThisEvent.EventType = ES_INIT;
@@ -98,10 +90,10 @@ bool InitMorseElementsSM(uint8_t Priority)
 
 /****************************************************************************
  Function
-     PostTemplateService
+     PostMorseElementsSM
 
  Parameters
-     EF_Event_t ThisEvent ,the event to post to the queue
+     ES_Event_t ThisEvent ,the event to post to the queue
 
  Returns
      bool false if the Enqueue operation failed, true otherwise
@@ -110,8 +102,6 @@ bool InitMorseElementsSM(uint8_t Priority)
      Posts an event to this state machine's queue
  Notes
 
- Author
-     J. Edward Carryer, 10/23/11, 19:25
 ****************************************************************************/
 bool PostMorseElementsSM(ES_Event_t ThisEvent)
 {
@@ -120,7 +110,7 @@ bool PostMorseElementsSM(ES_Event_t ThisEvent)
 
 /****************************************************************************
  Function
-    RunTemplateService
+    RunmorseElementsSM
 
  Parameters
    ES_Event_t : the event to process
@@ -129,11 +119,10 @@ bool PostMorseElementsSM(ES_Event_t ThisEvent)
    ES_Event, ES_NO_EVENT if no error ES_ERROR otherwise
 
  Description
-   add your description here
+   Calibrates MorseCode signal to detect dots and dashes then sends them to 
+   MorseDecode service to be decoded to legal characters
  Notes
 
- Author
-   J. Edward Carryer, 01/15/12, 15:23
 ****************************************************************************/
 ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
 {
@@ -151,20 +140,19 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
             NextState = CalWait4Rise;
           }
       break;
-          
+      
+      // section where signal is calibrated
       case CalWait4Rise: 
           switch (ThisEvent.EventType)
           {
-              case ES_RISING_EDGE:   // announce rise event
+              case ES_RISING_EDGE:   // if Rising Edge
               {
-                  LATBbits.LATB5 = 1;
-                  TimeOfLastRise = ThisEvent.EventParam;
+                  TimeOfLastRise = ThisEvent.EventParam; //store the time
                   NextState = CalWait4Fall;
               }
               break;
-              case ES_CAL_COMPLETED: 
+              case ES_CAL_COMPLETED: // if calibration is complete
               {
-                  LATBbits.LATB5 = 1;
                   NextState = EOC_WaitRise;
               }
               break;
@@ -175,26 +163,26 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       break;
       
       case CalWait4Fall: 
-          if (ThisEvent.EventType == ES_FALLING_EDGE)
+          if (ThisEvent.EventType == ES_FALLING_EDGE) //if Falling Edge
           {
-            LATBbits.LATB5 = 0;
-            TimeOfLastFall = ThisEvent.EventParam;
+            TimeOfLastFall = ThisEvent.EventParam; //store the time
             NextState = CalWait4Rise;
-            TestCalibration();
+            TestCalibration(); // calibrate the signal received to get length of dot
           }
       break;
-            
+      
+      //wait for end of character
       case EOC_WaitRise: 
           switch (ThisEvent.EventType)
           {
-            case ES_RISING_EDGE:   // announce rise event
+            case ES_RISING_EDGE:
             {
               TimeOfLastRise = ThisEvent.EventParam;
               NextState = EOC_WaitFall;
-              CharacterizeSpace();
+              CharacterizeSpace(); //characterize the space based on last fall and rise
             }
             break;
-            case ES_BUTTON_DOWN:   // announce button down event
+            case ES_BUTTON_DOWN: //go back to calibration mode
             {
               NextState = CalWait4Rise;
               FirstDelta = 0;
@@ -209,13 +197,13 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       case EOC_WaitFall: 
           switch (ThisEvent.EventType)
           {
-            case ES_FALLING_EDGE:   // announce rise event
+            case ES_FALLING_EDGE: 
             {
               TimeOfLastFall = ThisEvent.EventParam;
               NextState = EOC_WaitRise;
             }
             break;
-            case ES_BUTTON_DOWN:   // announce button down event
+            case ES_BUTTON_DOWN: // go back to calibration mode
             {
               NextState = CalWait4Rise;
               FirstDelta = 0;
@@ -237,17 +225,18 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
           }
       break;
       
+      // loop that keeps decoding characters unless Button is pushed down
       case DecodeWaitFall: 
           switch (ThisEvent.EventType)
           {
-            case ES_FALLING_EDGE:   // announce fall event
+            case ES_FALLING_EDGE: 
             {
               TimeOfLastFall = ThisEvent.EventParam;
               NextState = DecodeWaitRise;
-              CharacterizePulse();
+              CharacterizePulse(); //characterize the pulse based on last rise and fall
             }
             break;
-            case ES_BUTTON_DOWN:   // announce button down event
+            case ES_BUTTON_DOWN:   // go back to calibration mode
             {
               NextState = CalWait4Rise;
               FirstDelta = 0;
@@ -262,14 +251,14 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
       case DecodeWaitRise: 
           switch (ThisEvent.EventType)
           {
-            case ES_RISING_EDGE:   // announce rise event
+            case ES_RISING_EDGE: 
             {
               TimeOfLastRise = ThisEvent.EventParam;
               NextState = DecodeWaitFall;
-              CharacterizeSpace();
+              CharacterizeSpace(); //characterize the space based on last fall and rise
             }
             break;
-            case ES_BUTTON_DOWN:   // announce button down event
+            case ES_BUTTON_DOWN:   // go back to calibration mode
             {
               NextState = CalWait4Rise;
               FirstDelta = 0;
@@ -289,80 +278,138 @@ ES_Event_t RunMorseElementsSM(ES_Event_t ThisEvent)
   return ReturnEvent;
 }
 
+/****************************************************************************
+ Function
+   QueryMorseElements
+
+ Parameters
+   None
+
+ Returns
+   MorseElementState_t: current state of MorseElements machine
+
+ Description
+   returns the current state of the MorseElements machine
+ Notes
+
+****************************************************************************/
 MorseElementState_t QueryMorseElements(void)
 {
   return CurrentState;
 }
 
 
-/***************************************************************************
- private functions
- ***************************************************************************/
+/****************************************************************************
+ Function
+   Check4MorseEvent
+
+ Parameters
+   None
+
+ Returns
+   bool: true if Morse Event was found and false otherwise
+
+ Description
+   checks for rising and falling edges in the Morse signal
+ Notes
+
+****************************************************************************/
 bool Check4MorseEvent(void)
 {
-  bool returnVal = false;
+  bool returnVal = false; //assume morse event was not found
   uint8_t CurrentInputState;
-  CurrentInputState = PORTBbits.RB4;// readPinState();
+  CurrentInputState = digitalRead(10);// read input pin state and set as current input state
   
-  if (CurrentInputState != LastInputState)
+  if (CurrentInputState != LastInputState) //if event found
   {
-      if (CurrentInputState == 0) 
+      if (CurrentInputState == 0) //if falling edge
       {
         ES_Event_t ThisEvent;
         ThisEvent.EventType  = ES_FALLING_EDGE;
-        ThisEvent.EventParam  = ES_Timer_GetTime();
-        PostMorseElementsSM(ThisEvent);
+        ThisEvent.EventParam  = ES_Timer_GetTime(); //store time of event
+        PostMorseElementsSM(ThisEvent); //post to morse element service
         returnVal = true;
       }
       else
       {
-        ES_Event_t ThisEvent;
+        ES_Event_t ThisEvent; //if rising edge
         ThisEvent.EventType   = ES_RISING_EDGE;
-        ThisEvent.EventParam  = ES_Timer_GetTime();
-        PostMorseElementsSM(ThisEvent);
+        ThisEvent.EventParam  = ES_Timer_GetTime(); //store time time of event
+        PostMorseElementsSM(ThisEvent); //post to morse element service
         returnVal = true;
       }
   
-  LastInputState = CurrentInputState;
+  LastInputState = CurrentInputState; //set last input state as current input state
   
   return returnVal;
   }
 }
 
+/****************************************************************************
+ Function
+   TestCalibration
+
+ Parameters
+   None
+
+ Returns
+   None
+
+ Description
+   given the morse signal, it tries to get the length of a valid dot
+ Notes
+
+****************************************************************************/
 void TestCalibration(void)
 {
-    uint16_t SecondDelta;
-    if (FirstDelta == 0){
-        FirstDelta = TimeOfLastFall - TimeOfLastRise;
+    uint16_t SecondDelta; //second parameter used in calibration
+    if (FirstDelta == 0){ //first pass through TestCalibration
+        FirstDelta = TimeOfLastFall - TimeOfLastRise; //length of pulse
     }
-    else{
-        SecondDelta = TimeOfLastFall - TimeOfLastRise;
-        if ((100.0 * FirstDelta / SecondDelta) <= 33.33){
+    else{ //another pass through TestCalibration
+        SecondDelta = TimeOfLastFall - TimeOfLastRise; //length of pulse
+        if ((100.0 * FirstDelta / SecondDelta) <= 33.33){ //checks if first delta is a valid length of dot
             LengthOfDot = FirstDelta;
             ES_Event_t ThisEvent;
             ThisEvent.EventType = ES_CAL_COMPLETED;
             PostMorseElementsSM(ThisEvent);
         }
-        else if ((100.0 * FirstDelta / SecondDelta) > 300.0){
+        else if ((100.0 * FirstDelta / SecondDelta) > 300.0){ //checks if second delta is a valid length of dot
             LengthOfDot = SecondDelta;
             ES_Event_t ThisEvent;
             ThisEvent.EventType = ES_CAL_COMPLETED;
             PostMorseElementsSM(ThisEvent);
         }
-        else {
+        else { //length of dot not found, go look for another delta to test
             FirstDelta = SecondDelta;
         }
     }
     return;
 }
 
+/****************************************************************************
+ Function
+   CharacterizeSpace
+
+ Parameters
+   None
+
+ Returns
+   None
+
+ Description
+   checks if space is End of Character, End of Word or Bad Space
+ Notes
+
+****************************************************************************/
 void CharacterizeSpace(void)
 {
   uint16_t LastInterval;
   ES_Event_t ThisEvent;
-  LastInterval = TimeOfLastRise - TimeOfLastFall;
-  if ((LastInterval != LengthOfDot) && (LastInterval != LengthOfDot+1))
+  LastInterval = TimeOfLastRise - TimeOfLastFall; //length of space
+  if ((LastInterval != LengthOfDot) && (LastInterval != LengthOfDot+1)) //ensure it's a valid space
   {
+      //check for End of Character space
       if ((LastInterval >= LengthOfDot*3) && (LastInterval <= LengthOfDot*3 + 3))
       {
           ThisEvent.EventType = ES_EOC_DETECTED;
@@ -372,15 +419,14 @@ void CharacterizeSpace(void)
             PostMorseElementsSM(ThisEvent);
           }
       }
+      //check for End of Word space
       else if ((LastInterval >= LengthOfDot*7) && (LastInterval <= LengthOfDot*7 + 7))
       {
           ThisEvent.EventType = ES_EOW_DETECTED;
           PostMorseDecode(ThisEvent);
-          //if (CurrentState == EOC_WaitFall)
-          //{
-            PostMorseElementsSM(ThisEvent);
-          //}
+          PostMorseElementsSM(ThisEvent);
       }
+      //if it gets here, then it's a bad space
       else{
           ThisEvent.EventType = ES_BAD_SPACE;
           PostMorseDecode(ThisEvent);
@@ -393,22 +439,40 @@ void CharacterizeSpace(void)
   return;
 }
 
+/****************************************************************************
+ Function
+   CharacterizePulse
+
+ Parameters
+   None
+
+ Returns
+   None
+
+ Description
+   checks if pulse is Dot, Dash or Bad Pulse
+ Notes
+
+****************************************************************************/
 void CharacterizePulse(void)
 {
   uint16_t LastPulseWidth;
   ES_Event_t ThisEvent;
-  LastPulseWidth = TimeOfLastFall - TimeOfLastRise;
-
+  LastPulseWidth = TimeOfLastFall - TimeOfLastRise; //length of pulse
+  
+  //check for Dot
   if ((LastPulseWidth == LengthOfDot) || (LastPulseWidth == LengthOfDot+1))
   {
       ThisEvent.EventType   = ES_DOT_DETECTED;
       PostMorseDecode(ThisEvent);
   }
+  //check for Dash
   else if ((LastPulseWidth >= LengthOfDot*3) && (LastPulseWidth <= LengthOfDot*3 + 3))
   {
       ThisEvent.EventType   = ES_DASH_DETECTED;
       PostMorseDecode(ThisEvent);
   }
+  //if it gets here, then it's a bad pulse
   else
   {
       ThisEvent.EventType   = ES_BAD_PULSE;

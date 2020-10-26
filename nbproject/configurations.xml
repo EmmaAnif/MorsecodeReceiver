@@ -44,6 +44,8 @@
       <itemPath>ProjectHeaders/MorseElements.h</itemPath>
       <itemPath>ProjectHeaders/MorseDecode.h</itemPath>
       <itemPath>ProjectHeaders/ButtonStatus.h</itemPath>
+      <itemPath>ProjectHeaders/HAL.h</itemPath>
+      <itemPath>ProjectHeaders/ME218_PIC32_2020.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -62,6 +64,7 @@
       <itemPath>ProjectSource/MorseElements.c</itemPath>
       <itemPath>ProjectSource/MorseDecode.c</itemPath>
       <itemPath>ProjectSource/ButtonStatus.c</itemPath>
+      <itemPath>ProjectSource/HAL.c</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="u8g2Headers" projectFiles="true">
       <itemPath>u8g2Headers/common.h</itemPath>
@@ -786,7 +789,7 @@
         <platformTool>snap</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.41</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>4</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MX_DFP" vendor="Microchip" version="1.3.231"/>
@@ -952,6 +955,8 @@
         <property key="wpo-lto" value="false"/>
         <appendMe value="-std=gnu99"/>
       </C32Global>
+      <item path="ProjectHeaders/ME218_PIC32_2020.h" ex="true" overriding="false">
+      </item>
       <item path="ProjectHeaders/PrintOLEDService2.h" ex="true" overriding="false">
         <C32>
         </C32>
@@ -969,6 +974,20 @@
         </C32Global>
       </item>
       <item path="ProjectHeaders/TestHarnessService0.h" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
       </item>
       <item path="ProjectHeaders/WriteOLEDService1.h" ex="false" overriding="false">
         <C32>
@@ -1003,6 +1022,20 @@
         </C32Global>
       </item>
       <item path="ProjectSource/TestHarnessService0.c" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
       </item>
       <item path="ProjectSource/WriteOLEDService1.c" ex="false" overriding="false">
         <C32>

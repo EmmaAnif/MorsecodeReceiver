@@ -33,9 +33,9 @@
 /*---------------------------- Module Variables ---------------------------*/
 // with the introduction of Gen2, we need a module level Priority variable
 static uint8_t MyPriority;
-char MorseString[8];
-char MorseChar;
-uint8_t MSIndex;
+char MorseString[8]; //container to store dots and dashes
+char MorseChar; //store decoded character
+uint8_t MSIndex; //keep tract of index of characters in MorseString
 
 char LegalChars[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?.,:'-/()\"= !$&+;@_";
 char MorseCode[][8] ={ ".-","-...","-.-.","-..",".","..-.","--.",
@@ -56,7 +56,7 @@ uint8_t LClength; //number of legal characters
      InitMorseDecode
 
  Parameters
-     uint8_t : the priorty of this service
+     uint8_t : the priority of this service
 
  Returns
      bool, false if error in initialization, true otherwise
@@ -66,28 +66,26 @@ uint8_t LClength; //number of legal characters
      other required initialization for this service
  Notes
 
- Author
-     J. Edward Carryer, 01/16/12, 10:00
 ****************************************************************************/
 bool InitMorseDecode(uint8_t Priority)
 {
   MyPriority = Priority;
-  memreset(MorseString);
-  MSIndex = 0;
-  LClength = sizeof(LegalChars)/sizeof(*LegalChars);
+  str_reset(MorseString, MSlength); //clear and reset the MorseString array
+  MSIndex = 0; 
+  LClength = sizeof(LegalChars)/sizeof(*LegalChars); //get the number of legal characters
   
   return true;
 }
 
 /****************************************************************************
  Function
-     PostTemplateService
+     PostMorseCode
 
  Parameters
-     EF_Event_t ThisEvent ,the event to post to the queue
+     ES_Event_t ThisEvent ,the event to post to the queue
 
  Returns
-     bool false if the Enqueue operation failed, true otherwise
+     bool false if the post operation failed, true otherwise
 
  Description
      Posts an event to this state machine's queue
@@ -101,7 +99,7 @@ bool PostMorseDecode(ES_Event_t ThisEvent)
 
 /****************************************************************************
  Function
-    RunTemplateService
+    RunMorseCode
 
  Parameters
    ES_Event_t : the event to process
@@ -110,7 +108,8 @@ bool PostMorseDecode(ES_Event_t ThisEvent)
    ES_Event, ES_NO_EVENT if no error ES_ERROR otherwise
 
  Description
-   add your description here
+    accepts dots and dashes then decodes each character and sends it to be printed 
+    in the OLED
  Notes
 
 ****************************************************************************/
@@ -121,13 +120,13 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
   
   switch (ThisEvent.EventType) {
       case ES_DOT_DETECTED: {
-          if (MSIndex < MSlength) {
+          if (MSIndex < MSlength) { //checks to ensure sequence of dots and dashes is valid
               MorseString[MSIndex] = '.';
-              MSIndex++;
+              MSIndex++; //
           }
           else {
               ReturnEvent.EventType = ES_ERROR;
-              ReturnEvent.EventParam = ES_DOT_DETECTED;
+              ReturnEvent.EventParam = 'y'; //used to represent where error occurred
           }
       }
       break;
@@ -139,36 +138,37 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
           }
           else {
               ReturnEvent.EventType = ES_ERROR;
-              ReturnEvent.EventParam = ES_DASH_DETECTED;
+              ReturnEvent.EventParam = 'z';
           }
       }
       break;
       
-      case ES_EOC_DETECTED: {
-          MorseChar = DecodeMorseString();
-          printf("%c",MorseChar);
-          memreset(MorseString);
-          MSIndex = 0;
+      case ES_EOC_DETECTED: { //if end of character is detected
+          MorseChar = DecodeMorseString(); //save decoded character
+          printf("%c",MorseChar); //prints to TeraTerm for debugging
+          str_reset(MorseString, MSlength); // reset MorseString
+          MSIndex = 0; //reset the character index
           
           ES_Event_t CHAREvent;
           CHAREvent.EventType = ES_OLED_CHAR;
           CHAREvent.EventParam = MorseChar;
-          PostWriteOLED(CHAREvent); 
+          PostWriteOLED(CHAREvent); //post to OLED
       }
       break;
       
-      case ES_EOW_DETECTED: {
+      case ES_EOW_DETECTED: { //if end of word is detected
           MorseChar = DecodeMorseString();
           printf("%c ",MorseChar);
-          memreset(MorseString);
+          str_reset(MorseString, MSlength);
           MSIndex = 0;
           
+          //post space after character
           ES_Event_t CHAREvent;
           CHAREvent.EventType = ES_OLED_CHAR;
           CHAREvent.EventParam = MorseChar;
           PostWriteOLED(CHAREvent);
           
-          ES_Event_t SPACEEvent;
+          ES_Event_t SPACEEvent; 
           SPACEEvent.EventType = ES_OLED_CHAR;
           SPACEEvent.EventParam = ' ';
           PostWriteOLED(SPACEEvent);
@@ -176,22 +176,22 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
       }
       break;
       
-      case ES_BAD_SPACE: {
-          printf("B_S");
-          memreset(MorseString);
+      case ES_BAD_SPACE: { //if a bad space is encountered
+          printf("B_S"); //used for debugging
+          str_reset(MorseString, MSlength); //clear MorseString
           MSIndex = 0;
       }
       break;
       
-      case ES_BAD_PULSE: {
-          printf("B_P");
-          memreset(MorseString);
+      case ES_BAD_PULSE: { //if bad pulse is encountered
+          printf("B_P"); //used for debugging
+          str_reset(MorseString, MSlength); //clear MorseString
           MSIndex = 0;
       }
       break;
       
-      case ES_BUTTON_DOWN: {
-          memreset(MorseString);
+      case ES_BUTTON_DOWN: { //if Button down event
+          str_reset(MorseString, MSlength); //clear MorseString
           MSIndex = 0;
       }
       break;
@@ -204,39 +204,43 @@ ES_Event_t RunMorseDecode(ES_Event_t ThisEvent)
   return ReturnEvent;
 }
 
-/***************************************************************************
- private functions
- ***************************************************************************/
+/****************************************************************************
+ Function
+   DecodeMorseString
+
+ Parameters
+   None
+
+ Returns
+   char: character that was decoded based on series of dots and dashes
+
+ Description
+    accepts dots and dashes then decodes each character
+ Notes
+
+****************************************************************************/
 char DecodeMorseString(void) 
 {
-    bool checkVal;
+    bool checkVal; //used to check if legal character was found
     
     uint8_t j,k;
     char DecodedChar = '~'; //assume we did not find legal character
     for (j = 0; j < LClength; j++) { //iterate over all legal characters
-        checkVal = true;
+        checkVal = true; //assume legal character was found
         for (k = 0; k < MSlength; k++) { //iterate over each element of the MorseString
             if (MorseCode[j][k] != MorseString[k]){ //any disparity means false
-                checkVal = false;
+                checkVal = false; //legal character not found
                 break;
             }
         }
         if (checkVal == true) {
-            DecodedChar = LegalChars[j]; //if false not encountered, we found one
+            DecodedChar = LegalChars[j]; //if false not encountered, we found a legal character
             break;
         }
     }
     return DecodedChar;
 }
 
-void memreset(char arr[]) 
-{
-    for(uint8_t i = 0; i < MSlength; i++) //iterate over each element
-    {
-        arr[i] = '\0'; //reset with null character
-    }
-    return;
-}
 /*------------------------------- Footnotes -------------------------------*/
 /*------------------------------ End of file ------------------------------*/
 

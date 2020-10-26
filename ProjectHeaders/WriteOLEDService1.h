@@ -26,7 +26,7 @@ bool PostWriteOLED(ES_Event_t ThisEvent);
 ES_Event_t RunWriteOLED(ES_Event_t ThisEvent);
 WriteOLEDState_t QueryWriteOLED(void);
 bool Check4NextPage(void);
-void str_reset(char arr[]);
+void str_reset(char arr[], uint16_t arr_len);
 
 #endif /* FSMTemplate_H */
 
